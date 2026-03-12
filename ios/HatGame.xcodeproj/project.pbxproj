@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00385B6391AAA41213890A47 /* PairsRoundEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C86173ACC8456809BED06 /* PairsRoundEndView.swift */; };
+		00589CA5C364B2F184F551D5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652121910634CDDBAE52F375 /* OnboardingView.swift */; };
+		01D874A69F471B12FF4E0BDD /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF514133FC3E379EE5B0B1 /* GameEngine.swift */; };
+		02C1B7A83EC218649FB4B978 /* FreeForAllGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B5A005B5146E18E8D3332 /* FreeForAllGameViewModel.swift */; };
+		058496E26C2F9454C3B9FD18 /* PostRoundWordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A8CC3671FC1FF9C1CA7A4E /* PostRoundWordListView.swift */; };
+		15BE814AAD09026DE18B8689 /* TeamsFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14F3B125589519B105A1D3F /* TeamsFinalView.swift */; };
+		16CA098B9ABA37070D4C3CC5 /* PairsGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53871DA3E97B62071F13C6 /* PairsGameViewModel.swift */; };
+		24B3F3F7A8824F09396A1F0A /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9858822D53C9A94E1119FB /* GameSettings.swift */; };
+		2A260D5EA25CCCBFDE6968EB /* TeamSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78EE0550987B120D77796C /* TeamSetupViewModel.swift */; };
+		2B5861D37BBF946996E19CE9 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE872B0245B32BEF5572BC2C /* ConfettiView.swift */; };
+		30898B0C80A79E595A853DD7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971314FFE42296887858736 /* HomeView.swift */; };
+		37B0AA48BF5F433AF437F9ED /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38206EFBCF966D4E613948E /* GameViewModel.swift */; };
+		39546B8EA18014C707034A56 /* HatGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE88244BF73F92D3454EF43 /* HatGameApp.swift */; };
+		48089B9E0F46ED805F18E1ED /* UnifiedFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516196FD1E5B1B5A6196BDB6 /* UnifiedFinalView.swift */; };
+		4B83C8FFF5B8C95F00423680 /* FreeForAllWaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A8D01EAD68F9318635762 /* FreeForAllWaitingView.swift */; };
+		4DE0ED5D8578106C5AD45C09 /* SharedPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EDE4B8BF989D1DF52CDD95 /* SharedPauseView.swift */; };
+		5090477A65AC743D04F43866 /* PairsFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD5EACDA96E4BEAF33B1AE /* PairsFinalView.swift */; };
+		5383589EF8EF31393C9A1AAF /* PairsGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404362FBDCE67BE4F4C4C986 /* PairsGameplayView.swift */; };
+		5E6F7884CC73FD3EB3CA0A94 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50315D9FF82667E6ABDDBB8 /* SettingsView.swift */; };
+		6D3C1D9A9F3187DD758F9013 /* PhoneHandoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD270D0C03E4A85692B1635 /* PhoneHandoffView.swift */; };
+		6D7CD5680F0A047F34FD3A76 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16647B52A184C90C6D22AD /* Word.swift */; };
+		6DC138969B9304D5D4793BBF /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239C411507DD185064B5A7B /* GameplayView.swift */; };
+		70F66BD87715258DE7BAA371 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC525C56E49413EB866353 /* GameSession.swift */; };
+		79769106380A6CAE0B3BC958 /* GameplayButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FEFAC37802EF100E985D0 /* GameplayButtonsView.swift */; };
+		79B1B05ACCDEDAFDE4CD0134 /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D39B0F92AAA0167851510B /* TimerService.swift */; };
+		7D1732C220A910B2FCA1D19A /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFE804F613FBBD4622177F /* DeckViewModel.swift */; };
+		8014C416F416E8A99AF55DD4 /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D8C4F12736B826C9482F9 /* ModeSelectionView.swift */; };
+		80D9066D4BF7AD6F3BE2A23B /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F4D256E20E903BBC4E647 /* SoundService.swift */; };
+		81622F03DA78E1B745F3AF89 /* TeamsRoundEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84563301764E5526C404639 /* TeamsRoundEndView.swift */; };
+		85EB5437BE5CBF28164D343A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD7940EBE20A138EB87E24E /* ContentView.swift */; };
+		8A04E16670435311905A3AFE /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345DC94BBB4089E69C19C04D /* ResultsView.swift */; };
+		8C8EC653D59C0ABEB4DE0B49 /* TeamsGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255369524DA50304DA135895 /* TeamsGameViewModel.swift */; };
+		92FA6B35B2E55900CED0A249 /* TeamSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764EC646A9E0FD0AEDAA575F /* TeamSetupView.swift */; };
+		93AD25BFA7718CBA30BDC0B4 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AFC009BAFE510D23A54111 /* GameConfig.swift */; };
+		9986690D694951F3A2D6A408 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478EE9E6890E659E50FDB2FE /* DesignSystem.swift */; };
+		9D67627B1F73BDC91F0DEC83 /* ModeSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8AE392C5837F033B9E4C6 /* ModeSetupViewModel.swift */; };
+		9E8EE516E3AD80667E4132DA /* TeamsWaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77697644853A83C610FE1F70 /* TeamsWaitingView.swift */; };
+		9F681E591C61C520D97AD418 /* WordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BEB9C3015B763AD6558DDB /* WordInputView.swift */; };
+		A5BCC26388740F1DBF0E22E3 /* PairsWaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257952AEB8EA01CD5CC697DA /* PairsWaitingView.swift */; };
+		ADC364A1D677250226A673E8 /* PlayerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A890C7894E020ACDFEBF91A5 /* PlayerSetupView.swift */; };
+		B206F57572022219E2013369 /* TeamBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB129481E90982D8BE18CA /* TeamBuilderView.swift */; };
+		B306D2B60A23475D3DF09BE0 /* FreeForAllFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CD96BC2FF4B39622D6CF3 /* FreeForAllFinalView.swift */; };
+		BC4E7CDFBFEE3F736E98A558 /* PairsCircleEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300C30E3D11CE6B7EB3AA74 /* PairsCircleEndView.swift */; };
+		C60AF27E32438926EA73C8AB /* DifficultyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D844D833E886254E2A491 /* DifficultyPickerView.swift */; };
+		C7A6DB5280EA7AC0F9DAFAD9 /* FinalResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE077D0F490FC38CCDA4665C /* FinalResultsView.swift */; };
+		C93278EC1DE65CE24E479EA8 /* HatIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F12855EF0DACD066CF14C5C /* HatIconView.swift */; };
+		CEB8A21149692BFD5BDA8B8A /* TurnEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4D9A5A417D2EC65872421 /* TurnEndView.swift */; };
+		D82D38DEE2186246C5CFFC78 /* HatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E3E1164762DBEEB58AD95 /* HatButton.swift */; };
+		D9C1C74F6D0581213F87B30E /* HatGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2F2F73B82EAD9E067CC2B /* HatGameUITests.swift */; };
+		DA1F9A1B61F17F46AF7F48F9 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCE268DADAD4FB954B1625 /* WaitingView.swift */; };
+		DB62B1CE205F422899D5B7EC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6746904E0E7AFDC7A26C7310 /* Team.swift */; };
+		E198C79D9E92862922DCB5FC /* TeamsGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C6E4A4A3F26716A5118F4 /* TeamsGameplayView.swift */; };
+		E48115C4BCDEBA0FBC2BE2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877F5C3987DF8CA2FE10C8D3 /* Assets.xcassets */; };
+		E4F224E385D79C1E30B41CE6 /* PlayerSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FCAEDDF2F9FD1E6F59118 /* PlayerSetupViewModel.swift */; };
+		E511E6299E15C2C2241F3387 /* FreeForAllGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84AF7A817B74B154D21278 /* FreeForAllGameplayView.swift */; };
+		E9379A02FCCA22355E331C6F /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D31A23E174755C4BCBEB0 /* GameResult.swift */; };
+		EBA96480A7058901E79E3D40 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F929D45AA6E3B096838F14A6 /* DeckService.swift */; };
+		ECACBFF87F2CF5919FB1A17F /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66EA239CE5A2C1D9C7CF66A /* HapticService.swift */; };
+		EDDE0B70A43F6E0B8717F383 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B3C443BA5BCB9BCF021051 /* Player.swift */; };
+		EFEEFEC9915EAA0FD5E5C698 /* PairsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866283D47110E33755EEA30D /* PairsSchedule.swift */; };
+		F66AE808B2A22225A48C5B38 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = A82D2CB9D353F01DFBD75B81 /* words.json */; };
+		FE3D5667C353597EE4726B6D /* FreeForAllAttributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336FBBA9CDE0E789DE3D9E54 /* FreeForAllAttributionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6EDB6AD733A6BA3BF41230B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEF3D98EAD709D83B8D254ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7377AE5B8BC717FDADA08271;
+			remoteInfo = HatGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08AFC009BAFE510D23A54111 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		0F12855EF0DACD066CF14C5C /* HatIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatIconView.swift; sourceTree = "<group>"; };
+		12A8CC3671FC1FF9C1CA7A4E /* PostRoundWordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRoundWordListView.swift; sourceTree = "<group>"; };
+		1E5A8D01EAD68F9318635762 /* FreeForAllWaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllWaitingView.swift; sourceTree = "<group>"; };
+		255369524DA50304DA135895 /* TeamsGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsGameViewModel.swift; sourceTree = "<group>"; };
+		257952AEB8EA01CD5CC697DA /* PairsWaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsWaitingView.swift; sourceTree = "<group>"; };
+		2BD6AF4B653E71E6546CEF4F /* HatGame.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HatGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3300C30E3D11CE6B7EB3AA74 /* PairsCircleEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsCircleEndView.swift; sourceTree = "<group>"; };
+		331D844D833E886254E2A491 /* DifficultyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyPickerView.swift; sourceTree = "<group>"; };
+		336FBBA9CDE0E789DE3D9E54 /* FreeForAllAttributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllAttributionView.swift; sourceTree = "<group>"; };
+		33AFE804F613FBBD4622177F /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
+		345DC94BBB4089E69C19C04D /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		35BCE268DADAD4FB954B1625 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		38BEB9C3015B763AD6558DDB /* WordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordInputView.swift; sourceTree = "<group>"; };
+		3DD4D9A5A417D2EC65872421 /* TurnEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnEndView.swift; sourceTree = "<group>"; };
+		404362FBDCE67BE4F4C4C986 /* PairsGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsGameplayView.swift; sourceTree = "<group>"; };
+		478EE9E6890E659E50FDB2FE /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		4D16647B52A184C90C6D22AD /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		4D9D8C4F12736B826C9482F9 /* ModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionView.swift; sourceTree = "<group>"; };
+		4FE88244BF73F92D3454EF43 /* HatGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGameApp.swift; sourceTree = "<group>"; };
+		516196FD1E5B1B5A6196BDB6 /* UnifiedFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedFinalView.swift; sourceTree = "<group>"; };
+		554FEFAC37802EF100E985D0 /* GameplayButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayButtonsView.swift; sourceTree = "<group>"; };
+		5DD7940EBE20A138EB87E24E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		617C86173ACC8456809BED06 /* PairsRoundEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsRoundEndView.swift; sourceTree = "<group>"; };
+		61EDE4B8BF989D1DF52CDD95 /* SharedPauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPauseView.swift; sourceTree = "<group>"; };
+		652121910634CDDBAE52F375 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		6746904E0E7AFDC7A26C7310 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		70DD5EACDA96E4BEAF33B1AE /* PairsFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsFinalView.swift; sourceTree = "<group>"; };
+		764EC646A9E0FD0AEDAA575F /* TeamSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSetupView.swift; sourceTree = "<group>"; };
+		77697644853A83C610FE1F70 /* TeamsWaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWaitingView.swift; sourceTree = "<group>"; };
+		7DFC525C56E49413EB866353 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		862CD96BC2FF4B39622D6CF3 /* FreeForAllFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllFinalView.swift; sourceTree = "<group>"; };
+		863E3E1164762DBEEB58AD95 /* HatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatButton.swift; sourceTree = "<group>"; };
+		866283D47110E33755EEA30D /* PairsSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsSchedule.swift; sourceTree = "<group>"; };
+		877F5C3987DF8CA2FE10C8D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B53871DA3E97B62071F13C6 /* PairsGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsGameViewModel.swift; sourceTree = "<group>"; };
+		8FE321341189095013920737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9A8FCAEDDF2F9FD1E6F59118 /* PlayerSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSetupViewModel.swift; sourceTree = "<group>"; };
+		A50315D9FF82667E6ABDDBB8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A5BB129481E90982D8BE18CA /* TeamBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamBuilderView.swift; sourceTree = "<group>"; };
+		A5BF514133FC3E379EE5B0B1 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		A66EA239CE5A2C1D9C7CF66A /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		A68D31A23E174755C4BCBEB0 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		A82D2CB9D353F01DFBD75B81 /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		A890C7894E020ACDFEBF91A5 /* PlayerSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSetupView.swift; sourceTree = "<group>"; };
+		AAD270D0C03E4A85692B1635 /* PhoneHandoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneHandoffView.swift; sourceTree = "<group>"; };
+		B84563301764E5526C404639 /* TeamsRoundEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRoundEndView.swift; sourceTree = "<group>"; };
+		B86C6E4A4A3F26716A5118F4 /* TeamsGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsGameplayView.swift; sourceTree = "<group>"; };
+		B8C8AE392C5837F033B9E4C6 /* ModeSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSetupViewModel.swift; sourceTree = "<group>"; };
+		CB84AF7A817B74B154D21278 /* FreeForAllGameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllGameplayView.swift; sourceTree = "<group>"; };
+		CC2F4D256E20E903BBC4E647 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		CE077D0F490FC38CCDA4665C /* FinalResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultsView.swift; sourceTree = "<group>"; };
+		CF0E4B2E41D7482042660654 /* HatGameUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HatGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D39B0F92AAA0167851510B /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		DA78EE0550987B120D77796C /* TeamSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSetupViewModel.swift; sourceTree = "<group>"; };
+		E1B3C443BA5BCB9BCF021051 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E239C411507DD185064B5A7B /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
+		F14F3B125589519B105A1D3F /* TeamsFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsFinalView.swift; sourceTree = "<group>"; };
+		F38206EFBCF966D4E613948E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		F929D45AA6E3B096838F14A6 /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
+		F971314FFE42296887858736 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FAC2F2F73B82EAD9E067CC2B /* HatGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatGameUITests.swift; sourceTree = "<group>"; };
+		FE872B0245B32BEF5572BC2C /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		FF8B5A005B5146E18E8D3332 /* FreeForAllGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllGameViewModel.swift; sourceTree = "<group>"; };
+		FF9858822D53C9A94E1119FB /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0EF6AE7A95E0F23D4E1DA947 = {
+			isa = PBXGroup;
+			children = (
+				20A639B86BDCA91AEC0F6920 /* HatGame */,
+				55BBA071EC2A08D2C1A26BC6 /* HatGameUITests */,
+				561AA0235AD052BCF5B12C46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20A639B86BDCA91AEC0F6920 /* HatGame */ = {
+			isa = PBXGroup;
+			children = (
+				877F5C3987DF8CA2FE10C8D3 /* Assets.xcassets */,
+				5DD7940EBE20A138EB87E24E /* ContentView.swift */,
+				478EE9E6890E659E50FDB2FE /* DesignSystem.swift */,
+				4FE88244BF73F92D3454EF43 /* HatGameApp.swift */,
+				8FE321341189095013920737 /* Info.plist */,
+				B3E5B1F903844E30A0FC5E7D /* Components */,
+				4181E246A64DB3C0A5FE9870 /* Models */,
+				BB32EBCD51D34D8D23C948EE /* Resources */,
+				7BD16868DF089854FFE64FA5 /* Services */,
+				A3A099304DB45424FBFF4192 /* ViewModels */,
+				AE536FF19444EB55D9945A1B /* Views */,
+			);
+			path = HatGame;
+			sourceTree = "<group>";
+		};
+		4181E246A64DB3C0A5FE9870 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08AFC009BAFE510D23A54111 /* GameConfig.swift */,
+				A68D31A23E174755C4BCBEB0 /* GameResult.swift */,
+				7DFC525C56E49413EB866353 /* GameSession.swift */,
+				FF9858822D53C9A94E1119FB /* GameSettings.swift */,
+				866283D47110E33755EEA30D /* PairsSchedule.swift */,
+				E1B3C443BA5BCB9BCF021051 /* Player.swift */,
+				6746904E0E7AFDC7A26C7310 /* Team.swift */,
+				4D16647B52A184C90C6D22AD /* Word.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55BBA071EC2A08D2C1A26BC6 /* HatGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2F2F73B82EAD9E067CC2B /* HatGameUITests.swift */,
+			);
+			path = HatGameUITests;
+			sourceTree = "<group>";
+		};
+		561AA0235AD052BCF5B12C46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6AF4B653E71E6546CEF4F /* HatGame.app */,
+				CF0E4B2E41D7482042660654 /* HatGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BD16868DF089854FFE64FA5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F929D45AA6E3B096838F14A6 /* DeckService.swift */,
+				A5BF514133FC3E379EE5B0B1 /* GameEngine.swift */,
+				A66EA239CE5A2C1D9C7CF66A /* HapticService.swift */,
+				CC2F4D256E20E903BBC4E647 /* SoundService.swift */,
+				D4D39B0F92AAA0167851510B /* TimerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A3A099304DB45424FBFF4192 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				33AFE804F613FBBD4622177F /* DeckViewModel.swift */,
+				FF8B5A005B5146E18E8D3332 /* FreeForAllGameViewModel.swift */,
+				F38206EFBCF966D4E613948E /* GameViewModel.swift */,
+				B8C8AE392C5837F033B9E4C6 /* ModeSetupViewModel.swift */,
+				8B53871DA3E97B62071F13C6 /* PairsGameViewModel.swift */,
+				9A8FCAEDDF2F9FD1E6F59118 /* PlayerSetupViewModel.swift */,
+				DA78EE0550987B120D77796C /* TeamSetupViewModel.swift */,
+				255369524DA50304DA135895 /* TeamsGameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AE536FF19444EB55D9945A1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				331D844D833E886254E2A491 /* DifficultyPickerView.swift */,
+				CE077D0F490FC38CCDA4665C /* FinalResultsView.swift */,
+				336FBBA9CDE0E789DE3D9E54 /* FreeForAllAttributionView.swift */,
+				862CD96BC2FF4B39622D6CF3 /* FreeForAllFinalView.swift */,
+				CB84AF7A817B74B154D21278 /* FreeForAllGameplayView.swift */,
+				1E5A8D01EAD68F9318635762 /* FreeForAllWaitingView.swift */,
+				E239C411507DD185064B5A7B /* GameplayView.swift */,
+				F971314FFE42296887858736 /* HomeView.swift */,
+				4D9D8C4F12736B826C9482F9 /* ModeSelectionView.swift */,
+				652121910634CDDBAE52F375 /* OnboardingView.swift */,
+				3300C30E3D11CE6B7EB3AA74 /* PairsCircleEndView.swift */,
+				70DD5EACDA96E4BEAF33B1AE /* PairsFinalView.swift */,
+				404362FBDCE67BE4F4C4C986 /* PairsGameplayView.swift */,
+				617C86173ACC8456809BED06 /* PairsRoundEndView.swift */,
+				257952AEB8EA01CD5CC697DA /* PairsWaitingView.swift */,
+				AAD270D0C03E4A85692B1635 /* PhoneHandoffView.swift */,
+				A890C7894E020ACDFEBF91A5 /* PlayerSetupView.swift */,
+				345DC94BBB4089E69C19C04D /* ResultsView.swift */,
+				A50315D9FF82667E6ABDDBB8 /* SettingsView.swift */,
+				A5BB129481E90982D8BE18CA /* TeamBuilderView.swift */,
+				764EC646A9E0FD0AEDAA575F /* TeamSetupView.swift */,
+				F14F3B125589519B105A1D3F /* TeamsFinalView.swift */,
+				B86C6E4A4A3F26716A5118F4 /* TeamsGameplayView.swift */,
+				B84563301764E5526C404639 /* TeamsRoundEndView.swift */,
+				77697644853A83C610FE1F70 /* TeamsWaitingView.swift */,
+				3DD4D9A5A417D2EC65872421 /* TurnEndView.swift */,
+				516196FD1E5B1B5A6196BDB6 /* UnifiedFinalView.swift */,
+				35BCE268DADAD4FB954B1625 /* WaitingView.swift */,
+				38BEB9C3015B763AD6558DDB /* WordInputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3E5B1F903844E30A0FC5E7D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FE872B0245B32BEF5572BC2C /* ConfettiView.swift */,
+				554FEFAC37802EF100E985D0 /* GameplayButtonsView.swift */,
+				863E3E1164762DBEEB58AD95 /* HatButton.swift */,
+				0F12855EF0DACD066CF14C5C /* HatIconView.swift */,
+				12A8CC3671FC1FF9C1CA7A4E /* PostRoundWordListView.swift */,
+				61EDE4B8BF989D1DF52CDD95 /* SharedPauseView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BB32EBCD51D34D8D23C948EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A82D2CB9D353F01DFBD75B81 /* words.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		317AACC6FDF01253CA3BD5D7 /* HatGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26B2F62EA1AD5589085A1ABC /* Build configuration list for PBXNativeTarget "HatGameUITests" */;
+			buildPhases = (
+				8E45100D806F39AEECA83E8E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B30F172BDBD991FBB77E9A49 /* PBXTargetDependency */,
+			);
+			name = HatGameUITests;
+			packageProductDependencies = (
+			);
+			productName = HatGameUITests;
+			productReference = CF0E4B2E41D7482042660654 /* HatGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7377AE5B8BC717FDADA08271 /* HatGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381E2895E119305621F2ACA8 /* Build configuration list for PBXNativeTarget "HatGame" */;
+			buildPhases = (
+				2789C7CE5F14B64E2DAE3EF9 /* Sources */,
+				60D7EE965FDAC2D3FA481533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HatGame;
+			packageProductDependencies = (
+			);
+			productName = HatGame;
+			productReference = 2BD6AF4B653E71E6546CEF4F /* HatGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEF3D98EAD709D83B8D254ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					317AACC6FDF01253CA3BD5D7 = {
+						DevelopmentTeam = "";
+						TestTargetID = 7377AE5B8BC717FDADA08271;
+					};
+					7377AE5B8BC717FDADA08271 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 36A74732151C2A2EFCB872E4 /* Build configuration list for PBXProject "HatGame" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0EF6AE7A95E0F23D4E1DA947;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 561AA0235AD052BCF5B12C46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7377AE5B8BC717FDADA08271 /* HatGame */,
+				317AACC6FDF01253CA3BD5D7 /* HatGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60D7EE965FDAC2D3FA481533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48115C4BCDEBA0FBC2BE2D9 /* Assets.xcassets in Resources */,
+				F66AE808B2A22225A48C5B38 /* words.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2789C7CE5F14B64E2DAE3EF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B5861D37BBF946996E19CE9 /* ConfettiView.swift in Sources */,
+				85EB5437BE5CBF28164D343A /* ContentView.swift in Sources */,
+				EBA96480A7058901E79E3D40 /* DeckService.swift in Sources */,
+				7D1732C220A910B2FCA1D19A /* DeckViewModel.swift in Sources */,
+				9986690D694951F3A2D6A408 /* DesignSystem.swift in Sources */,
+				C60AF27E32438926EA73C8AB /* DifficultyPickerView.swift in Sources */,
+				C7A6DB5280EA7AC0F9DAFAD9 /* FinalResultsView.swift in Sources */,
+				FE3D5667C353597EE4726B6D /* FreeForAllAttributionView.swift in Sources */,
+				B306D2B60A23475D3DF09BE0 /* FreeForAllFinalView.swift in Sources */,
+				02C1B7A83EC218649FB4B978 /* FreeForAllGameViewModel.swift in Sources */,
+				E511E6299E15C2C2241F3387 /* FreeForAllGameplayView.swift in Sources */,
+				4B83C8FFF5B8C95F00423680 /* FreeForAllWaitingView.swift in Sources */,
+				93AD25BFA7718CBA30BDC0B4 /* GameConfig.swift in Sources */,
+				01D874A69F471B12FF4E0BDD /* GameEngine.swift in Sources */,
+				E9379A02FCCA22355E331C6F /* GameResult.swift in Sources */,
+				70F66BD87715258DE7BAA371 /* GameSession.swift in Sources */,
+				24B3F3F7A8824F09396A1F0A /* GameSettings.swift in Sources */,
+				37B0AA48BF5F433AF437F9ED /* GameViewModel.swift in Sources */,
+				79769106380A6CAE0B3BC958 /* GameplayButtonsView.swift in Sources */,
+				6DC138969B9304D5D4793BBF /* GameplayView.swift in Sources */,
+				ECACBFF87F2CF5919FB1A17F /* HapticService.swift in Sources */,
+				D82D38DEE2186246C5CFFC78 /* HatButton.swift in Sources */,
+				39546B8EA18014C707034A56 /* HatGameApp.swift in Sources */,
+				C93278EC1DE65CE24E479EA8 /* HatIconView.swift in Sources */,
+				30898B0C80A79E595A853DD7 /* HomeView.swift in Sources */,
+				8014C416F416E8A99AF55DD4 /* ModeSelectionView.swift in Sources */,
+				9D67627B1F73BDC91F0DEC83 /* ModeSetupViewModel.swift in Sources */,
+				00589CA5C364B2F184F551D5 /* OnboardingView.swift in Sources */,
+				BC4E7CDFBFEE3F736E98A558 /* PairsCircleEndView.swift in Sources */,
+				5090477A65AC743D04F43866 /* PairsFinalView.swift in Sources */,
+				16CA098B9ABA37070D4C3CC5 /* PairsGameViewModel.swift in Sources */,
+				5383589EF8EF31393C9A1AAF /* PairsGameplayView.swift in Sources */,
+				00385B6391AAA41213890A47 /* PairsRoundEndView.swift in Sources */,
+				EFEEFEC9915EAA0FD5E5C698 /* PairsSchedule.swift in Sources */,
+				A5BCC26388740F1DBF0E22E3 /* PairsWaitingView.swift in Sources */,
+				6D3C1D9A9F3187DD758F9013 /* PhoneHandoffView.swift in Sources */,
+				EDDE0B70A43F6E0B8717F383 /* Player.swift in Sources */,
+				ADC364A1D677250226A673E8 /* PlayerSetupView.swift in Sources */,
+				E4F224E385D79C1E30B41CE6 /* PlayerSetupViewModel.swift in Sources */,
+				058496E26C2F9454C3B9FD18 /* PostRoundWordListView.swift in Sources */,
+				8A04E16670435311905A3AFE /* ResultsView.swift in Sources */,
+				5E6F7884CC73FD3EB3CA0A94 /* SettingsView.swift in Sources */,
+				4DE0ED5D8578106C5AD45C09 /* SharedPauseView.swift in Sources */,
+				80D9066D4BF7AD6F3BE2A23B /* SoundService.swift in Sources */,
+				DB62B1CE205F422899D5B7EC /* Team.swift in Sources */,
+				B206F57572022219E2013369 /* TeamBuilderView.swift in Sources */,
+				92FA6B35B2E55900CED0A249 /* TeamSetupView.swift in Sources */,
+				2A260D5EA25CCCBFDE6968EB /* TeamSetupViewModel.swift in Sources */,
+				15BE814AAD09026DE18B8689 /* TeamsFinalView.swift in Sources */,
+				8C8EC653D59C0ABEB4DE0B49 /* TeamsGameViewModel.swift in Sources */,
+				E198C79D9E92862922DCB5FC /* TeamsGameplayView.swift in Sources */,
+				81622F03DA78E1B745F3AF89 /* TeamsRoundEndView.swift in Sources */,
+				9E8EE516E3AD80667E4132DA /* TeamsWaitingView.swift in Sources */,
+				79B1B05ACCDEDAFDE4CD0134 /* TimerService.swift in Sources */,
+				CEB8A21149692BFD5BDA8B8A /* TurnEndView.swift in Sources */,
+				48089B9E0F46ED805F18E1ED /* UnifiedFinalView.swift in Sources */,
+				DA1F9A1B61F17F46AF7F48F9 /* WaitingView.swift in Sources */,
+				6D7CD5680F0A047F34FD3A76 /* Word.swift in Sources */,
+				9F681E591C61C520D97AD418 /* WordInputView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E45100D806F39AEECA83E8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9C1C74F6D0581213F87B30E /* HatGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B30F172BDBD991FBB77E9A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7377AE5B8BC717FDADA08271 /* HatGame */;
+			targetProxy = C6EDB6AD733A6BA3BF41230B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02B0EA6A0B301CACF76EE6EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = HatGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.noxlabs.hatgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0F736EF8F8C64BEBADDB71CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HatGame;
+			};
+			name = Debug;
+		};
+		199218C21EC1217D303FECB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = HatGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.noxlabs.hatgame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2485D250BA1C4DF2D7F63C25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = HatGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		71939078FC6585FB70401D9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HatGame;
+			};
+			name = Release;
+		};
+		FD55BDB6BCDE0F022C56B46B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = HatGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26B2F62EA1AD5589085A1ABC /* Build configuration list for PBXNativeTarget "HatGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F736EF8F8C64BEBADDB71CE /* Debug */,
+				71939078FC6585FB70401D9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		36A74732151C2A2EFCB872E4 /* Build configuration list for PBXProject "HatGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02B0EA6A0B301CACF76EE6EC /* Debug */,
+				199218C21EC1217D303FECB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		381E2895E119305621F2ACA8 /* Build configuration list for PBXNativeTarget "HatGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD55BDB6BCDE0F022C56B46B /* Debug */,
+				2485D250BA1C4DF2D7F63C25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEF3D98EAD709D83B8D254ED /* Project object */;
+}

@@ -8,9 +8,20 @@ struct UnifiedFinalView: View {
 
     @State private var appeared = false
     @State private var showConfetti = false
+    @State private var showPodium = true   // показываем пьедестал первым
 
     var body: some View {
         ZStack {
+            if showPodium {
+                PodiumView(entries: podiumEntries) {
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        showPodium = false
+                    }
+                }
+                .transition(.opacity)
+                .zIndex(1)
+            }
+
             Color.hatBackground.ignoresSafeArea()
 
             ScrollView {
@@ -40,13 +51,28 @@ struct UnifiedFinalView: View {
                 }
             }
         }
-        .overlay { if showConfetti { ConfettiView().ignoresSafeArea() } }
+        .overlay { if showConfetti && !showPodium { ConfettiView().ignoresSafeArea() } }
         .navigationBarHidden(true)
         .onAppear {
             withAnimation(.spring(duration: 0.5).delay(0.1)) {
                 appeared = true
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { showConfetti = true }
+        }
+    }
+
+    // MARK: - Podium entries
+
+    private var podiumEntries: [PodiumView.Entry] {
+        switch result {
+        case .players(let standings, _):
+            return standings.prefix(3).enumerated().map { idx, e in
+                PodiumView.Entry(rank: idx + 1, name: e.player.name, score: e.score, avatar: e.player.avatarEmoji)
+            }
+        case .teams(let standings):
+            return standings.prefix(3).enumerated().map { idx, t in
+                PodiumView.Entry(rank: idx + 1, name: t.name, score: t.score, avatar: nil)
+            }
         }
     }
 
@@ -131,7 +157,8 @@ struct UnifiedFinalView: View {
                     rank: idx + 1,
                     name: entry.player.name,
                     score: entry.score,
-                    isWinner: idx == 0
+                    isWinner: idx == 0,
+                    avatar: entry.player.avatarEmoji
                 )
                 if idx < standings.count - 1 {
                     Divider().background(Color.hatSurface)
@@ -165,10 +192,11 @@ struct UnifiedFinalView: View {
             if let onPlayAgain {
                 HatPrimaryButton(title: "Играть снова", action: onPlayAgain)
             }
+            ShareResultButton(result: result)
             Button(action: onNewGame) {
                 Text("Новая игра")
                     .font(.hatBody)
-                    .foregroundStyle(onPlayAgain != nil ? Color.hatTextSecondary : Color.hatGold)
+                    .foregroundStyle(Color.hatTextSecondary)
             }
             .buttonStyle(.plain)
         }
@@ -235,11 +263,13 @@ private struct LeaderboardRow: View {
     let name: String
     let score: Int
     let isWinner: Bool
+    var avatar: String? = nil
 
     private static let medalColors: [Color] = [.hatGold, Color(hex: 0xC0C0C0), Color(hex: 0xCD7F32)]
 
     var body: some View {
         HStack(spacing: 14) {
+            // Медаль / место
             ZStack {
                 Circle()
                     .fill(rank <= 3 ? Self.medalColors[rank - 1] : Color.hatSurface)
@@ -247,6 +277,13 @@ private struct LeaderboardRow: View {
                 Text("\(rank)")
                     .font(.system(size: 14, weight: .bold, design: .rounded))
                     .foregroundStyle(rank <= 3 ? Color.hatBackground : Color.hatTextPrimary)
+            }
+
+            // Эмодзи-аватар (если задан)
+            if let avatar {
+                Text(avatar)
+                    .font(.system(size: 22))
+                    .frame(width: 30)
             }
 
             Text(name)

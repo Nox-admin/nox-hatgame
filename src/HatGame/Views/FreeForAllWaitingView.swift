@@ -3,6 +3,7 @@ import SwiftUI
 struct FreeForAllWaitingView: View {
     @ObservedObject var viewModel: FreeForAllGameViewModel
     var onHome: () -> Void
+    @State private var showCountdown = false
 
     var body: some View {
         ZStack {
@@ -26,15 +27,8 @@ struct FreeForAllWaitingView: View {
                 if let explainer = viewModel.currentExplainer {
                     VStack(spacing: 20) {
                         // Аватар
-                        ZStack {
-                            Circle()
-                                .fill(LinearGradient.heroGradient)
-                                .frame(width: 100, height: 100)
-                            Text(String(explainer.name.prefix(1)).uppercased())
-                                .font(.system(size: 44, weight: .bold, design: .rounded))
-                                .foregroundStyle(Color.white)
-                        }
-                        .shadow(color: Color.hatGold.opacity(0.4), radius: 16, y: 8)
+                        PlayerAvatarView(player: explainer, size: 100, color: Color.hatGold)
+                            .shadow(color: Color.hatGold.opacity(0.4), radius: 16, y: 8)
 
                         VStack(spacing: 6) {
                             Text(explainer.name)
@@ -63,6 +57,11 @@ struct FreeForAllWaitingView: View {
                                     .font(.hatCaption)
                                     .foregroundStyle(Color.hatTextSecondary)
                                     .frame(width: 20)
+
+                                if let emoji = entry.player.avatarEmoji {
+                                    Text(emoji)
+                                        .font(.system(size: 18))
+                                }
 
                                 Text(entry.player.name)
                                     .font(.hatBody)
@@ -105,7 +104,7 @@ struct FreeForAllWaitingView: View {
                 VStack(spacing: 12) {
                     HatPrimaryButton(title: "Поехали!") {
                         HapticService.light()
-                        viewModel.startRound()
+                        showCountdown = true
                     }
 
                     Button {
@@ -123,6 +122,13 @@ struct FreeForAllWaitingView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 34)
+            }
+            if showCountdown {
+                CountdownOverlay {
+                    showCountdown = false
+                    viewModel.startRound()
+                }
+                .transition(.opacity)
             }
         }
         .navigationBarHidden(true)

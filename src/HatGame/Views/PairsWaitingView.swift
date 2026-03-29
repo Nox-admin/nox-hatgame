@@ -4,6 +4,7 @@ import SwiftUI
 struct PairsWaitingView: View {
     @ObservedObject var viewModel: PairsGameViewModel
     var onHome: () -> Void
+    @State private var showCountdown = false
 
     @Environment(\.scenePhase) private var scenePhase
 
@@ -33,13 +34,13 @@ struct PairsWaitingView: View {
                 if let round = viewModel.currentRound {
                     VStack(spacing: 20) {
                         HStack(spacing: 24) {
-                            playerAvatar(name: round.explainer.name)
+                            playerAvatar(round.explainer)
 
                             Image(systemName: "arrow.right")
                                 .font(.hatH2)
                                 .foregroundStyle(Color.hatGold)
 
-                            playerAvatar(name: round.guesser.name)
+                            playerAvatar(round.guesser)
                         }
 
                         Text("\(round.explainer.name) объясняет")
@@ -64,7 +65,7 @@ struct PairsWaitingView: View {
                 // Кнопка старта
                 HatPrimaryButton(title: "Поехали!") {
                     HapticService.light()
-                    viewModel.startRound()
+                    showCountdown = true
                 }
                 .padding(.horizontal, 20)
 
@@ -81,31 +82,24 @@ struct PairsWaitingView: View {
                 }
                 .padding(.bottom, 32)
             }
+
+            if showCountdown {
+                CountdownOverlay {
+                    showCountdown = false
+                    viewModel.startRound()
+                }
+                .transition(.opacity)
+            }
         }
         .navigationBarHidden(true)
     }
 
     // MARK: - Аватар игрока
 
-    private func playerAvatar(name: String) -> some View {
+    private func playerAvatar(_ player: Player) -> some View {
         VStack(spacing: 8) {
-            ZStack {
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [Color.hatGold, Color.hatWarm],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .frame(width: 64, height: 64)
-
-                Text(String(name.prefix(1)).uppercased())
-                    .font(.hatH1)
-                    .foregroundStyle(.white)
-            }
-
-            Text(name)
+            PlayerAvatarView(player: player, size: 64, color: Color.hatGold)
+            Text(player.name)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextPrimary)
                 .lineLimit(1)
@@ -121,6 +115,11 @@ struct PairsWaitingView: View {
                 HStack {
                     medalBadge(for: index)
                         .frame(width: 30)
+
+                    if let emoji = entry.player.avatarEmoji {
+                        Text(emoji)
+                            .font(.system(size: 18))
+                    }
 
                     Text(entry.player.name)
                         .font(.hatBody)

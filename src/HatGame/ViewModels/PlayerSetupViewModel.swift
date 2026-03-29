@@ -51,8 +51,13 @@ final class PlayerSetupViewModel: ObservableObject {
             name = "Игрок \(suffix)"
         }
         withAnimation(.spring(duration: 0.3)) {
-            players.append(Player(name: name))
+            players.append(Player(name: name, emoji: ""))
         }
+    }
+
+    func setEmoji(_ emoji: String, at index: Int) {
+        guard players.indices.contains(index) else { return }
+        players[index].emoji = (players[index].emoji == emoji) ? "" : emoji
     }
 
     func removePlayer(at index: Int) {

@@ -4,6 +4,7 @@ import SwiftUI
 struct TeamsWaitingView: View {
     @ObservedObject var viewModel: TeamsGameViewModel
     var onHome: () -> Void
+    @State private var showCountdown = false
 
     var body: some View {
         ZStack {
@@ -31,21 +32,8 @@ struct TeamsWaitingView: View {
                         .tracking(2)
 
                     if let explainer = viewModel.currentExplainer {
-                        ZStack {
-                            Circle()
-                                .fill(
-                                    LinearGradient(
-                                        colors: [Color.hatGold, Color.hatWarm],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                                .frame(width: 80, height: 80)
-
-                            Text(String(explainer.name.prefix(1)).uppercased())
-                                .font(.hatDisplay)
-                                .foregroundStyle(.white)
-                        }
+                        PlayerAvatarView(player: explainer, size: 80, color: Color.hatGold)
+                            .shadow(color: Color.hatGold.opacity(0.4), radius: 16, y: 8)
 
                         Text(explainer.name)
                             .font(.hatH1)
@@ -69,7 +57,7 @@ struct TeamsWaitingView: View {
                 // Кнопка старта
                 HatPrimaryButton(title: "Поехали!") {
                     HapticService.light()
-                    viewModel.startTurn()
+                    showCountdown = true
                 }
                 .padding(.horizontal, 20)
 
@@ -85,6 +73,14 @@ struct TeamsWaitingView: View {
                     .foregroundStyle(Color.hatTextSecondary)
                 }
                 .padding(.bottom, 32)
+            }
+
+            if showCountdown {
+                CountdownOverlay {
+                    showCountdown = false
+                    viewModel.startTurn()
+                }
+                .transition(.opacity)
             }
         }
         .navigationBarHidden(true)

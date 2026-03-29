@@ -342,6 +342,10 @@ final class GameViewModel: ObservableObject {
         engine.session.currentTeam?.currentExplainer?.name ?? ""
     }
 
+    var currentExplainerPlayer: Player? {
+        engine.session.currentTeam?.currentExplainer
+    }
+
     // MARK: - Приватные методы
 
     private func observeEngine() {

@@ -9,6 +9,7 @@ struct PlayerSetupView: View {
     var onContinue: ([Player]) -> Void = { _ in }
 
     @State private var editingIndex: Int? = nil
+    @State private var emojiPickerIndex: Int? = nil  // показывать пикер для этого индекса
     @FocusState private var focusedIndex: Int?
 
     var body: some View {
@@ -24,6 +25,16 @@ struct PlayerSetupView: View {
                         addButton
                         if let error = viewModel.validationError {
                             validationBanner(error)
+                        }
+                        // Пикер эмодзи — показывается под списком при тапе на аватар
+                        if let idx = emojiPickerIndex, viewModel.players.indices.contains(idx) {
+                            EmojiPickerView(
+                                selected: viewModel.players[idx].emoji,
+                                onSelect: { emoji in
+                                    viewModel.setEmoji(emoji, at: idx)
+                                }
+                            )
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
                         }
                     }
                     .padding(.horizontal, 20)
@@ -96,7 +107,13 @@ struct PlayerSetupView: View {
                     },
                     onDelete: {
                         if focusedIndex == index { focusedIndex = nil }
+                        if emojiPickerIndex == index { emojiPickerIndex = nil }
                         viewModel.removePlayer(at: index)
+                    },
+                    onAvatarTap: {
+                        withAnimation(.spring(duration: 0.3)) {
+                            emojiPickerIndex = (emojiPickerIndex == index) ? nil : index
+                        }
                     },
                     avatarColor: viewModel.avatarColor(for: index)
                 )
@@ -223,22 +240,22 @@ private struct PlayerInputRow: View {
     let onNameChange: (String) -> Void
     let onFocusTap: () -> Void
     let onDelete: () -> Void
+    let onAvatarTap: () -> Void
     let avatarColor: Color
 
     @State private var localName: String = ""
 
     var body: some View {
         HStack(spacing: 14) {
-            // Аватар — буква имени
-            ZStack {
-                Circle()
-                    .fill(avatarColor.opacity(isDuplicate ? 0.4 : 1.0))
-                    .frame(width: 44, height: 44)
-
-                Text(String(player.name.first ?? "?").uppercased())
-                    .font(.hatButton)
-                    .foregroundStyle(.white)
+            // Аватар — эмодзи или первая буква; тап открывает пикер
+            Button(action: onAvatarTap) {
+                PlayerAvatarView(
+                    player: player,
+                    size: 44,
+                    color: avatarColor.opacity(isDuplicate ? 0.4 : 1.0)
+                )
             }
+            .buttonStyle(.plain)
             .animation(.easeInOut(duration: 0.2), value: isDuplicate)
 
             // Поле имени

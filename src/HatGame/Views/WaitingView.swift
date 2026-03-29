@@ -3,6 +3,7 @@ import SwiftUI
 /// Экран ожидания перед ходом (Screen 07)
 struct WaitingView: View {
     @ObservedObject var viewModel: GameViewModel
+    @State private var showCountdown = false
 
     var body: some View {
         ZStack {
@@ -30,21 +31,12 @@ struct WaitingView: View {
                         .tracking(2)
 
                     // Large avatar
-                    ZStack {
-                        Circle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [Color.hatGold, Color.hatWarm],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
-                            .frame(width: 80, height: 80)
-
-                        Text(String(viewModel.currentExplainerName.prefix(1)).uppercased())
-                            .font(.hatH1)
-                            .foregroundStyle(.white)
-                    }
+                    PlayerAvatarView(
+                        player: viewModel.currentExplainerPlayer ?? Player(name: viewModel.currentExplainerName),
+                        size: 80,
+                        color: Color.hatGold
+                    )
+                    .shadow(color: Color.hatGold.opacity(0.4), radius: 16, y: 8)
 
                     Text(viewModel.currentExplainerName)
                         .font(.hatH1)
@@ -59,7 +51,7 @@ struct WaitingView: View {
 
                 // Start button
                 HatPrimaryButton(title: "Поехали!") {
-                    viewModel.startTurn()
+                    showCountdown = true
                 }
                 .padding(.horizontal, 20)
 
@@ -75,6 +67,14 @@ struct WaitingView: View {
                     .foregroundStyle(Color.hatTextSecondary)
                 }
                 .padding(.bottom, 32)
+            }
+            // Countdown overlay
+            if showCountdown {
+                CountdownOverlay {
+                    showCountdown = false
+                    viewModel.startTurn()
+                }
+                .transition(.opacity)
             }
         }
         .navigationBarHidden(true)

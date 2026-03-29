@@ -50,6 +50,8 @@ struct FinalResultsView: View {
                         viewModel.playAgain()
                     }
 
+                    ShareResultButton(result: .teams(standings: viewModel.standings))
+
                     HatSecondaryButton(title: "В меню") {
                         viewModel.goHome()
                     }

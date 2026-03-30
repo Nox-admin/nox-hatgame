@@ -4,6 +4,13 @@ import SwiftUI
 struct FinalResultsView: View {
     @ObservedObject var viewModel: GameViewModel
     @State private var showConfetti = false
+    @State private var revealedCount = 0   // сколько мест уже показано (staged reveal)
+    @State private var showWinner = false   // показать карточку победителя
+
+    /// Количество мест в leaderboard (без первого — победитель отдельно)
+    private var otherCount: Int {
+        max(0, viewModel.standings.count - 1)
+    }
 
     var body: some View {
         ZStack {
@@ -32,37 +39,61 @@ struct FinalResultsView: View {
                     .font(.hatH1)
                     .foregroundStyle(Color.hatTextPrimary)
 
-                // Winner card
-                if let winner = viewModel.engine.winner {
+                // Winner card — появляется после всех мест
+                if showWinner, let winner = viewModel.engine.winner {
                     winnerCard(team: winner)
                         .padding(.horizontal, 20)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
 
-                // Other players
+                // Other players — staged reveal (последнее место → ... → 2-е)
                 otherPlayersSection
                     .padding(.horizontal, 20)
 
                 Spacer()
 
-                // Buttons
-                VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Ещё раз!") {
-                        viewModel.playAgain()
-                    }
+                // Buttons — показываем после reveal
+                if showWinner {
+                    VStack(spacing: 12) {
+                        HatPrimaryButton(title: "Ещё раз!") {
+                            viewModel.playAgain()
+                        }
 
-                    ShareResultButton(result: .teams(standings: viewModel.standings))
+                        ShareResultButton(result: .teams(standings: viewModel.standings))
 
-                    HatSecondaryButton(title: "В меню") {
-                        viewModel.goHome()
+                        HatSecondaryButton(title: "В меню") {
+                            viewModel.goHome()
+                        }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 24)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 24)
             }
         }
         .navigationBarHidden(true)
-        .onAppear {
-            withAnimation(.easeIn(duration: 0.5)) {
+        .onAppear { startStagedReveal() }
+    }
+
+    // MARK: - Staged Reveal
+
+    private func startStagedReveal() {
+        // Reveal от последнего к 2-му месту (индекс otherCount-1 → 0), потом winner
+        for step in 0..<otherCount {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(step) * 0.8 + 0.3) {
+                withAnimation(.spring(duration: 0.45, bounce: 0.25)) {
+                    revealedCount = step + 1
+                }
+            }
+        }
+        // Winner card + confetti после всех мест
+        let winnerDelay = Double(otherCount) * 0.8 + 0.3 + 0.4
+        DispatchQueue.main.asyncAfter(deadline: .now() + winnerDelay) {
+            withAnimation(.spring(duration: 0.5, bounce: 0.3)) {
+                showWinner = true
+            }
+            SoundService.playGuess()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 showConfetti = true
             }
         }
@@ -110,6 +141,9 @@ struct FinalResultsView: View {
             let sorted = viewModel.standings
             ForEach(Array(sorted.enumerated()), id: \.element.id) { index, team in
                 if index > 0 { // Skip winner (already shown above)
+                    let reverseIdx = sorted.count - 1 - index // последнее место появляется первым
+                    let isRevealed = reverseIdx < revealedCount
+
                     HStack {
                         medalBadge(for: index)
                             .frame(width: 30)
@@ -129,6 +163,9 @@ struct FinalResultsView: View {
                         RoundedRectangle(cornerRadius: 14)
                             .fill(Color.hatCard)
                     )
+                    .opacity(isRevealed ? 1 : 0)
+                    .offset(y: isRevealed ? 0 : 20)
+                    .animation(.spring(duration: 0.45, bounce: 0.25), value: isRevealed)
                 }
             }
         }

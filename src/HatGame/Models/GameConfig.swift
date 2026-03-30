@@ -9,6 +9,7 @@ enum GameMode: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    /// Оригинальный (русский) заголовок — используется где локализация не нужна (логи и т.д.)
     var title: String {
         switch self {
         case .pairs: return "Попарный"
@@ -17,11 +18,29 @@ enum GameMode: String, CaseIterable, Identifiable {
         }
     }
 
+    /// Локализованный заголовок для отображения в UI
+    var localizedTitle: String {
+        switch self {
+        case .pairs: return L10n.Mode.pairsTitle
+        case .teams: return L10n.Mode.teamsTitle
+        case .freeForAll: return L10n.Mode.ffaTitle
+        }
+    }
+
     var description: String {
         switch self {
         case .pairs: return "Игроки объясняют по парам. Каждый побывает объяснителем."
         case .teams: return "Разбейтесь на команды. Команды соревнуются между собой."
         case .freeForAll: return "Один объясняет — все остальные угадывают. Побеждает тот, кто угадает больше."
+        }
+    }
+
+    /// Локализованное описание режима для UI
+    var localizedDescription: String {
+        switch self {
+        case .pairs: return L10n.Mode.pairsDesc
+        case .teams: return L10n.Mode.teamsDesc
+        case .freeForAll: return L10n.Mode.ffaDesc
         }
     }
 

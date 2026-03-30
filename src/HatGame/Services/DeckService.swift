@@ -26,6 +26,17 @@ final class DeckService {
         let categories: [CategoryData]
     }
 
+    // Для плоского формата (words_en.json, words_zh.json)
+    private struct FlatWordsFile: Decodable {
+        let words: [FlatWordEntry]
+    }
+
+    private struct FlatWordEntry: Decodable {
+        let text: String
+        let category: String
+        let difficulty: String
+    }
+
     // MARK: - Загрузка слов
 
     /// Загрузить слова из JSON-файла
@@ -68,6 +79,15 @@ final class DeckService {
     // MARK: - Загрузка из бандла
 
     private static func loadFromBundle(level: WordLevel?) -> [Word]? {
+        // Пробуем файл для текущего языка (words_en.json, words_zh.json и т.д.)
+        let languageFileName = LanguageManager.shared.currentLanguage.wordsFileName
+        if languageFileName != "words",
+           let url = Bundle.main.url(forResource: languageFileName, withExtension: "json") {
+            if let words = parseMainFile(at: url, level: level), !words.isEmpty {
+                return words
+            }
+        }
+        // Фолбэк: базовый русский файл
         guard let url = Bundle.main.url(forResource: "words", withExtension: "json") else {
             return nil
         }
@@ -126,6 +146,21 @@ final class DeckService {
                         category: category.id
                     ))
                 }
+            }
+            return words
+        }
+
+        // Пробуем плоский формат (words_en.json, words_zh.json)
+        if let flat = try? JSONDecoder().decode(FlatWordsFile.self, from: data) {
+            var words: [Word] = []
+            for entry in flat.words {
+                guard let wordLevel = WordLevel(rawValue: entry.difficulty) else { continue }
+                if let filterLevel = level, filterLevel != wordLevel { continue }
+                words.append(Word(
+                    text: entry.text,
+                    level: wordLevel,
+                    category: entry.category
+                ))
             }
             return words
         }

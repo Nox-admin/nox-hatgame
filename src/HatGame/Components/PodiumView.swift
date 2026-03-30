@@ -52,7 +52,7 @@ struct PodiumView: View {
                 Spacer()
 
                 // Подпись
-                Text("ИТОГОВЫЕ МЕСТА")
+                Text(L10n.Final.podium)
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
                     .tracking(3)
@@ -78,7 +78,7 @@ struct PodiumView: View {
                 // Кнопка — появляется после финального reveal
                 if revealedCount >= podiumCount {
                     Button(action: onFinish) {
-                        Text("Продолжить")
+                        Text(L10n.Nav.continue_)
                             .font(.hatButton)
                             .foregroundStyle(Color.hatBackground)
                             .padding(.horizontal, 32)
@@ -175,9 +175,9 @@ struct PodiumView: View {
     // MARK: - Animation sequence
 
     private func startReveal() {
-        // Показываем места поочерёдно: 3-е, 2-е, 1-е — с интервалом 1.2с
+        // Показываем места поочерёдно: 3-е, 2-е, 1-е — с интервалом 0.8с
         for (step, _) in revealOrder.enumerated() {
-            let delay = Double(step) * 1.2
+            let delay = Double(step) * 0.8
             DispatchQueue.main.asyncAfter(deadline: .now() + delay + 0.4) {
                 withAnimation {
                     revealedCount = step + 1

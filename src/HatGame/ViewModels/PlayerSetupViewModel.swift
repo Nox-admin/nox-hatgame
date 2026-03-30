@@ -42,13 +42,13 @@ final class PlayerSetupViewModel: ObservableObject {
 
     func addPlayer() {
         let number = players.count + 1
-        var name = "Игрок \(number)"
+        var name = L10n.Players.defaultName(number)
         // Гарантируем уникальность имени по умолчанию
         var suffix = number
         let existingNames = Set(players.map { $0.name })
         while existingNames.contains(name) {
             suffix += 1
-            name = "Игрок \(suffix)"
+            name = L10n.Players.defaultName(suffix)
         }
         withAnimation(.spring(duration: 0.3)) {
             players.append(Player(name: name, emoji: ""))

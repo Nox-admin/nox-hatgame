@@ -1,0 +1,89 @@
+/* Home */
+"home.title" = "ШЛЯПА";
+"home.subtitle" = "Игра в слова для компании";
+"home.new_game" = "Новая игра";
+"home.rules" = "Правила";
+
+/* Onboarding */
+"onboarding.skip" = "Пропустить";
+"onboarding.next" = "Далее →";
+"onboarding.start" = "Начать игру";
+"onboarding.slide1.title" = "Игра для компании";
+"onboarding.slide1.subtitle" = "Все за одним телефоном";
+"onboarding.slide2.title" = "Объясни слово";
+"onboarding.slide2.subtitle" = "не называя его. Команда угадывает!";
+"onboarding.slide3.title" = "Собери друзей";
+"onboarding.slide3.subtitle" = "придумай слова — поехали!";
+
+/* Rules */
+"rules.title" = "Правила игры";
+"rules.1" = "Разделитесь на команды по 2+ игрока.";
+"rules.2" = "В шляпу попадают слова выбранной сложности.";
+"rules.3" = "Один игрок объясняет слово, остальные угадывают.";
+"rules.4" = "За каждое угаданное слово команда получает очко.";
+"rules.5" = "Время ограничено — успейте угадать как можно больше!";
+"rules.6" = "Побеждает команда с наибольшим количеством очков.";
+
+/* Player Setup */
+"player.setup.title" = "Игроки";
+"player.setup.subtitle" = "Введи имя для каждого игрока";
+"player.add" = "Добавить игрока";
+"player.ready" = "Готов →";
+
+/* Mode Selection */
+"mode.selection.title" = "Режим игры";
+"mode.teams" = "Команды";
+"mode.pairs" = "Пары";
+"mode.freeforall" = "Все сразу";
+"mode.start" = "Начать игру";
+
+/* Settings */
+"settings.title" = "Настройки";
+"settings.round_time" = "Время раунда";
+"settings.words_count" = "Количество слов";
+"settings.difficulty" = "Сложность";
+"settings.difficulty.all" = "Все уровни (микс)";
+"settings.difficulty.easy" = "Лёгкий";
+"settings.difficulty.medium" = "Средний";
+"settings.difficulty.hard" = "Сложный";
+"settings.rules" = "Правила";
+"settings.allow_skip" = "Разрешить пропуск слов";
+"settings.penalty_skip" = "Штраф за пропуск (-1 очко)";
+"settings.done" = "Готово";
+"settings.language" = "Язык";
+"settings.sec_format" = "%d сек";
+"settings.words_format" = "%d слов";
+
+/* Gameplay */
+"game.skip" = "Пропустить";
+"game.guessed" = "Угадано ✓";
+"game.time_left" = "Осталось";
+"game.pause" = "Пауза";
+"game.resume" = "Продолжить";
+"game.exit" = "Выйти";
+"game.ready" = "Готов";
+"game.start_turn" = "Начать ход";
+"game.pass_phone" = "Передай телефон";
+"game.explaining" = "Объясняет";
+"game.guessing" = "Угадывает";
+
+/* Results */
+"results.title" = "Результаты";
+"results.winner" = "Победитель";
+"results.play_again" = "Играть снова";
+"results.home" = "В меню";
+"results.total_words" = "Слов угадано";
+"results.round_score" = "Очков за ход";
+
+/* Teams */
+"teams.add" = "Добавить команду";
+"teams.name_placeholder" = "Название команды";
+
+/* General */
+"button.back" = "Назад";
+"button.continue" = "Продолжить";
+"button.cancel" = "Отмена";
+"button.confirm" = "Подтвердить";
+"label.score" = "Очки";
+"label.round" = "Раунд";
+"label.turn" = "Ход";

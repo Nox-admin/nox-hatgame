@@ -25,7 +25,7 @@ struct WaitingView: View {
 
                 // Next turn info
                 VStack(spacing: 16) {
-                    Text("СЛЕДУЮЩИЙ ХОД")
+                    Text(L10n.Waiting.nextTurn)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(2)
@@ -42,7 +42,7 @@ struct WaitingView: View {
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
 
-                    Text("объясняет слова")
+                    Text(L10n.Waiting.explainsWords)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -50,7 +50,7 @@ struct WaitingView: View {
                 Spacer()
 
                 // Start button
-                HatPrimaryButton(title: "Поехали!") {
+                HatPrimaryButton(title: L10n.Waiting.go) {
                     showCountdown = true
                 }
                 .padding(.horizontal, 20)
@@ -61,7 +61,7 @@ struct WaitingView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "house")
-                        Text("На главную")
+                        Text(L10n.Nav.home)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)

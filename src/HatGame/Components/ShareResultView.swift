@@ -122,7 +122,7 @@ struct ShareResultButton: View {
             HStack(spacing: 8) {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 15, weight: .semibold))
-                Text("Поделиться")
+                Text(L10n.Final.share)
                     .font(.hatButton)
             }
             .foregroundStyle(Color.hatGold)

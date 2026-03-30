@@ -62,13 +62,13 @@ struct ModeSelectionView: View {
             Button(action: onBack) {
                 HStack(spacing: 4) {
                     Image(systemName: "chevron.left")
-                    Text("Игроки")
+                    Text(L10n.Nav.players)
                 }
                 .font(.hatBody)
                 .foregroundStyle(Color.hatGold)
             }
             Spacer()
-            Text("Режим игры")
+            Text(L10n.Mode.title)
                 .font(.hatButton)
                 .foregroundStyle(Color.hatTextPrimary)
             Spacer()
@@ -89,7 +89,7 @@ struct ModeSelectionView: View {
 
     private var modeSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("РЕЖИМ")
+            Text(L10n.Mode.section)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -115,7 +115,7 @@ struct ModeSelectionView: View {
 
     private var settingsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("НАСТРОЙКИ")
+            Text(L10n.Settings.section)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -126,7 +126,7 @@ struct ModeSelectionView: View {
                     DifficultyPickerView(selectedDifficulty: $viewModel.difficulty)
                 } label: {
                     HStack {
-                        Text("Сложность слов")
+                        Text(L10n.Settings.difficulty)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextPrimary)
                         Spacer()
@@ -150,7 +150,7 @@ struct ModeSelectionView: View {
 
                 // Время хода
                 HStack {
-                    Text("Время хода")
+                    Text(L10n.Settings.turnTime)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextPrimary)
                     Spacer()
@@ -189,7 +189,7 @@ struct ModeSelectionView: View {
 
                 // TASK-027: Слов в шляпе
                 HStack {
-                    Text("Слов в шляпе")
+                    Text(L10n.Settings.hatSize)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextPrimary)
                     Spacer()
@@ -229,10 +229,10 @@ struct ModeSelectionView: View {
                 // BUG-030: Тоггл "Пропустить"
                 HStack {
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("Кнопка «Пропустить»")
+                        Text(L10n.Settings.skipButton)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextPrimary)
-                        Text("Объяснитель может пропускать слова")
+                        Text(L10n.Settings.skipSubtitle)
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatTextSecondary)
                     }
@@ -278,7 +278,7 @@ struct ModeSelectionView: View {
 
     private var startButton: some View {
         VStack(spacing: 6) {
-            HatPrimaryButton(title: "Начать игру") {
+            HatPrimaryButton(title: L10n.Mode.start) {
                 onStart(viewModel.buildConfig())
             }
             .disabled(!viewModel.canProceed)
@@ -317,10 +317,10 @@ private struct ModeCard: View {
                 }
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(mode.title)
+                    Text(mode.localizedTitle)
                         .font(.hatButton)
                         .foregroundStyle(isAvailable ? Color.hatTextPrimary : Color.hatTextSecondary)
-                    Text(mode.description)
+                    Text(mode.localizedDescription)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .multilineTextAlignment(.leading)

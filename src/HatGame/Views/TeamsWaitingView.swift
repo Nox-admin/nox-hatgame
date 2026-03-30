@@ -26,7 +26,7 @@ struct TeamsWaitingView: View {
 
                 // Кто объясняет
                 VStack(spacing: 16) {
-                    Text("СЛЕДУЮЩИЙ ХОД")
+                    Text(L10n.Waiting.nextTurn)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(2)
@@ -42,7 +42,7 @@ struct TeamsWaitingView: View {
 
                     if let team = viewModel.currentTeam {
                         HStack(spacing: 4) {
-                            Text("объясняет за")
+                            Text(L10n.Waiting.explainsFor)
                                 .font(.hatBody)
                                 .foregroundStyle(Color.hatTextSecondary)
                             Text(team.name)
@@ -55,7 +55,7 @@ struct TeamsWaitingView: View {
                 Spacer()
 
                 // Кнопка старта
-                HatPrimaryButton(title: "Поехали!") {
+                HatPrimaryButton(title: L10n.Waiting.go) {
                     HapticService.light()
                     showCountdown = true
                 }
@@ -67,7 +67,7 @@ struct TeamsWaitingView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "flag.checkered")
-                        Text("Завершить игру")
+                        Text(L10n.Waiting.endGame)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)

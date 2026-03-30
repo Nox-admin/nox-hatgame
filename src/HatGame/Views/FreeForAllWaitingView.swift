@@ -16,7 +16,7 @@ struct FreeForAllWaitingView: View {
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(3)
-                    Text("Слов в шляпе: \(viewModel.wordsRemaining)")
+                    Text(L10n.Waiting.wordsInHat(viewModel.wordsRemaining))
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatGold)
                 }
@@ -34,7 +34,7 @@ struct FreeForAllWaitingView: View {
                             Text(explainer.name)
                                 .font(.hatH1)
                                 .foregroundStyle(Color.hatTextPrimary)
-                            Text("объясняет всем")
+                            Text(L10n.Waiting.explainsAll)
                                 .font(.hatBody)
                                 .foregroundStyle(Color.hatTextSecondary)
                         }
@@ -102,7 +102,7 @@ struct FreeForAllWaitingView: View {
 
                 // Кнопки
                 VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Поехали!") {
+                    HatPrimaryButton(title: L10n.Waiting.go) {
                         HapticService.light()
                         showCountdown = true
                     }
@@ -113,7 +113,7 @@ struct FreeForAllWaitingView: View {
                         HStack(spacing: 6) {
                             Image(systemName: "flag.checkered")
                                 .font(.system(size: 14))
-                            Text("Завершить игру")
+                            Text(L10n.Waiting.endGame)
                         }
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)

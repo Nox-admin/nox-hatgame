@@ -11,10 +11,11 @@ enum DifficultyLevel: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .easy: return "Лёгкий"
-        case .medium: return "Средний"
-        case .hard: return "Сложный"
-        case .custom: return "Свои слова"
+        case .easy:   return L10n.Difficulty.easy
+        case .medium: return L10n.Difficulty.medium
+        case .hard:   return L10n.Difficulty.hard
+        case .custom: return String(localized: "difficulty.custom",
+                                   defaultValue: "Custom Words")
         }
     }
 
@@ -36,10 +37,10 @@ enum DifficultyLevel: String, CaseIterable, Identifiable {
 
     var description: String {
         switch self {
-        case .easy: return "Простые слова: предметы, животные, известные всем"
-        case .medium: return "Смешанные слова: люди, места, понятия"
-        case .hard: return "Абстракции, редкие слова, сложные понятия"
-        case .custom: return "Игроки вводят слова сами"
+        case .easy:   return String(localized: "difficulty.easy.full_description",  defaultValue: "Simple words: objects, animals, well-known things")
+        case .medium: return String(localized: "difficulty.medium.description",      defaultValue: "Mixed words: people, places, concepts")
+        case .hard:   return L10n.Difficulty.hardExample
+        case .custom: return String(localized: "difficulty.custom.description",      defaultValue: "Players enter their own words")
         }
     }
 

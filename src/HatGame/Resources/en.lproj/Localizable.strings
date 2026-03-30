@@ -1,0 +1,89 @@
+/* Home */
+"home.title" = "HAT GAME";
+"home.subtitle" = "Word game for a group";
+"home.new_game" = "New Game";
+"home.rules" = "Rules";
+
+/* Onboarding */
+"onboarding.skip" = "Skip";
+"onboarding.next" = "Next →";
+"onboarding.start" = "Start Game";
+"onboarding.slide1.title" = "Party Game";
+"onboarding.slide1.subtitle" = "Everyone on one phone";
+"onboarding.slide2.title" = "Explain the Word";
+"onboarding.slide2.subtitle" = "without saying it. Team guesses!";
+"onboarding.slide3.title" = "Gather Friends";
+"onboarding.slide3.subtitle" = "think up words — let's go!";
+
+/* Rules */
+"rules.title" = "How to Play";
+"rules.1" = "Split into teams of 2+ players.";
+"rules.2" = "Words of chosen difficulty go into the hat.";
+"rules.3" = "One player explains, others guess.";
+"rules.4" = "Each guessed word earns a point.";
+"rules.5" = "Time is limited — guess as many as you can!";
+"rules.6" = "The team with the most points wins.";
+
+/* Player Setup */
+"player.setup.title" = "Players";
+"player.setup.subtitle" = "Enter a name for each player";
+"player.add" = "Add Player";
+"player.ready" = "Ready →";
+
+/* Mode Selection */
+"mode.selection.title" = "Game Mode";
+"mode.teams" = "Teams";
+"mode.pairs" = "Pairs";
+"mode.freeforall" = "Free for All";
+"mode.start" = "Start Game";
+
+/* Settings */
+"settings.title" = "Settings";
+"settings.round_time" = "Round Duration";
+"settings.words_count" = "Word Count";
+"settings.difficulty" = "Difficulty";
+"settings.difficulty.all" = "All Levels (Mix)";
+"settings.difficulty.easy" = "Easy";
+"settings.difficulty.medium" = "Medium";
+"settings.difficulty.hard" = "Hard";
+"settings.rules" = "Rules";
+"settings.allow_skip" = "Allow Word Skip";
+"settings.penalty_skip" = "Penalty for skip (-1 point)";
+"settings.done" = "Done";
+"settings.language" = "Language";
+"settings.sec_format" = "%d sec";
+"settings.words_format" = "%d words";
+
+/* Gameplay */
+"game.skip" = "Skip";
+"game.guessed" = "Guessed ✓";
+"game.time_left" = "Time left";
+"game.pause" = "Pause";
+"game.resume" = "Resume";
+"game.exit" = "Exit";
+"game.ready" = "Ready";
+"game.start_turn" = "Start Turn";
+"game.pass_phone" = "Pass the Phone";
+"game.explaining" = "Explaining";
+"game.guessing" = "Guessing";
+
+/* Results */
+"results.title" = "Results";
+"results.winner" = "Winner";
+"results.play_again" = "Play Again";
+"results.home" = "Home";
+"results.total_words" = "Words Guessed";
+"results.round_score" = "Points This Turn";
+
+/* Teams */
+"teams.add" = "Add Team";
+"teams.name_placeholder" = "Team Name";
+
+/* General */
+"button.back" = "Back";
+"button.continue" = "Continue";
+"button.cancel" = "Cancel";
+"button.confirm" = "Confirm";
+"label.score" = "Score";
+"label.round" = "Round";
+"label.turn" = "Turn";

@@ -1,0 +1,89 @@
+/* Home */
+"home.title" = "帽子游戏";
+"home.subtitle" = "多人文字游戏";
+"home.new_game" = "新游戏";
+"home.rules" = "规则";
+
+/* Onboarding */
+"onboarding.skip" = "跳过";
+"onboarding.next" = "下一步 →";
+"onboarding.start" = "开始游戏";
+"onboarding.slide1.title" = "派对游戏";
+"onboarding.slide1.subtitle" = "大家共用一部手机";
+"onboarding.slide2.title" = "解释词语";
+"onboarding.slide2.subtitle" = "不能说出来，让队友猜！";
+"onboarding.slide3.title" = "召集朋友";
+"onboarding.slide3.subtitle" = "想好词语，出发！";
+
+/* Rules */
+"rules.title" = "游戏规则";
+"rules.1" = "分成每队2人以上的队伍。";
+"rules.2" = "选定难度的词语放入帽子。";
+"rules.3" = "一名玩家解释词语，其他人猜。";
+"rules.4" = "每猜中一个词得一分。";
+"rules.5" = "时间有限，尽量多猜！";
+"rules.6" = "得分最多的队伍获胜。";
+
+/* Player Setup */
+"player.setup.title" = "玩家";
+"player.setup.subtitle" = "为每位玩家输入名字";
+"player.add" = "添加玩家";
+"player.ready" = "准备好了 →";
+
+/* Mode Selection */
+"mode.selection.title" = "游戏模式";
+"mode.teams" = "团队";
+"mode.pairs" = "配对";
+"mode.freeforall" = "自由混战";
+"mode.start" = "开始游戏";
+
+/* Settings */
+"settings.title" = "设置";
+"settings.round_time" = "回合时间";
+"settings.words_count" = "词语数量";
+"settings.difficulty" = "难度";
+"settings.difficulty.all" = "所有级别（混合）";
+"settings.difficulty.easy" = "简单";
+"settings.difficulty.medium" = "中等";
+"settings.difficulty.hard" = "困难";
+"settings.rules" = "规则";
+"settings.allow_skip" = "允许跳过词语";
+"settings.penalty_skip" = "跳过扣1分";
+"settings.done" = "完成";
+"settings.language" = "语言";
+"settings.sec_format" = "%d秒";
+"settings.words_format" = "%d个词";
+
+/* Gameplay */
+"game.skip" = "跳过";
+"game.guessed" = "猜中 ✓";
+"game.time_left" = "剩余时间";
+"game.pause" = "暂停";
+"game.resume" = "继续";
+"game.exit" = "退出";
+"game.ready" = "准备好了";
+"game.start_turn" = "开始回合";
+"game.pass_phone" = "传递手机";
+"game.explaining" = "正在解释";
+"game.guessing" = "正在猜";
+
+/* Results */
+"results.title" = "结果";
+"results.winner" = "获胜者";
+"results.play_again" = "再玩一次";
+"results.home" = "主菜单";
+"results.total_words" = "猜中词语数";
+"results.round_score" = "本轮得分";
+
+/* Teams */
+"teams.add" = "添加队伍";
+"teams.name_placeholder" = "队伍名称";
+
+/* General */
+"button.back" = "返回";
+"button.continue" = "继续";
+"button.cancel" = "取消";
+"button.confirm" = "确认";
+"label.score" = "分数";
+"label.round" = "回合";
+"label.turn" = "轮次";

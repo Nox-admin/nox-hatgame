@@ -63,7 +63,7 @@ struct PlayerSetupView: View {
             Button(action: onBack) {
                 HStack(spacing: 4) {
                     Image(systemName: "chevron.left")
-                    Text("Назад")
+                    Text(L10n.Nav.back)
                 }
                 .font(.hatBody)
                 .foregroundStyle(Color.hatGold)
@@ -71,7 +71,7 @@ struct PlayerSetupView: View {
 
             Spacer()
 
-            Text("Игроки")
+            Text(L10n.Nav.players)
                 .font(.hatButton)
                 .foregroundStyle(Color.hatTextPrimary)
 
@@ -155,7 +155,7 @@ struct PlayerSetupView: View {
                         .foregroundStyle(Color.hatGold)
                 }
 
-                Text("Добавить игрока")
+                Text(L10n.Players.add)
                     .font(.hatBody)
                     .foregroundStyle(Color.hatGold)
 
@@ -205,12 +205,12 @@ struct PlayerSetupView: View {
         VStack(spacing: 8) {
             // Подсказка о кол-ве игроков
             if viewModel.players.count < viewModel.minPlayers {
-                Text("Нужно минимум \(viewModel.minPlayers) игрока")
+                Text(L10n.Players.minRequired(viewModel.minPlayers))
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
 
-            HatPrimaryButton(title: "Далее →") {
+            HatPrimaryButton(title: L10n.Nav.next) {
                 viewModel.validateNames()
                 guard viewModel.canProceed else { return }
                 onContinue(viewModel.players)
@@ -259,7 +259,7 @@ private struct PlayerInputRow: View {
             .animation(.easeInOut(duration: 0.2), value: isDuplicate)
 
             // Поле имени
-            TextField("Имя игрока", text: $localName)
+            TextField(L10n.Players.namePlaceholder, text: $localName)
                 .font(.hatBody)
                 .foregroundStyle(isDuplicate ? Color.hatDanger : Color.hatTextPrimary)
                 .textFieldStyle(.plain)

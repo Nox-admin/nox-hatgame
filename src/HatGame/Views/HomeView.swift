@@ -3,6 +3,7 @@ import SwiftUI
 /// Главный экран — точка входа в игру
 struct HomeView: View {
     @ObservedObject var viewModel: GameViewModel
+    @ObservedObject private var languageManager = LanguageManager.shared
     @State private var hatOffset: CGFloat = 0
     @State private var showRules = false
 
@@ -28,12 +29,12 @@ struct HomeView: View {
 
                 // Заголовок
                 VStack(spacing: 8) {
-                    Text("ШЛЯПА")
+                    Text(L10n.Home.title)
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
                         .tracking(6)
 
-                    Text("Игра в слова для компании")
+                    Text(L10n.Home.tagline)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -42,12 +43,12 @@ struct HomeView: View {
 
                 // Кнопки
                 VStack(spacing: 14) {
-                    HatPrimaryButton(title: "Новая игра") {
+                    HatPrimaryButton(title: L10n.Home.newGame) {
                         viewModel.navigateTo(.playerSetup)
                     }
 
                     // BUG-020: кнопка "Настройки" убрана с главного экрана по требованию Jack
-                    HatSecondaryButton(title: "Правила") {
+                    HatSecondaryButton(title: L10n.Home.rules) {
                         showRules = true
                     }
                 }
@@ -75,7 +76,7 @@ private struct RulesSheet: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     HStack {
-                        Text("Правила игры")
+                        Text(L10n.Rules.title)
                             .font(.hatH1)
                             .foregroundStyle(Color.hatTextPrimary)
                         Spacer()
@@ -86,12 +87,12 @@ private struct RulesSheet: View {
                         }
                     }
 
-                    ruleItem("1", "Разделитесь на команды по 2+ игрока.")
-                    ruleItem("2", "В шляпу попадают слова выбранной сложности.")
-                    ruleItem("3", "Один игрок объясняет слово, остальные угадывают.")
-                    ruleItem("4", "За каждое угаданное слово команда получает очко.")
-                    ruleItem("5", "Время ограничено — успейте угадать как можно больше!")
-                    ruleItem("6", "Побеждает команда с наибольшим количеством очков.")
+                    ruleItem("1", L10n.Rules.rule1)
+                    ruleItem("2", L10n.Rules.rule2)
+                    ruleItem("3", L10n.Rules.rule3)
+                    ruleItem("4", L10n.Rules.rule4)
+                    ruleItem("5", L10n.Rules.rule5)
+                    ruleItem("6", L10n.Rules.rule6)
                 }
                 .padding(24)
             }

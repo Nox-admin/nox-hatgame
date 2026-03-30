@@ -5,11 +5,11 @@ struct OnboardingView: View {
     @Binding var isOnboardingDone: Bool
     @State private var currentPage = 0
 
-    private let slides: [(symbolName: String, title: String, subtitle: String)] = [
-        ("theatermasks.fill", "Игра для компании", "Все за одним телефоном"),
-        ("bubble.left.and.bubble.right.fill", "Объясни слово", "не называя его. Команда угадывает!"),
-        ("trophy.fill", "Собери друзей", "придумай слова — поехали!")
-    ]
+    private var slides: [(symbolName: String, title: String, subtitle: String)] {[
+        ("theatermasks.fill", L10n.Onboarding.slide1Title, L10n.Onboarding.slide1Subtitle),
+        ("bubble.left.and.bubble.right.fill", L10n.Onboarding.slide2Title, L10n.Onboarding.slide2Subtitle),
+        ("trophy.fill", L10n.Onboarding.slide3Title, L10n.Onboarding.slide3Subtitle)
+    ]}
 
     var body: some View {
         ZStack {
@@ -23,7 +23,7 @@ struct OnboardingView: View {
                     Button {
                         isOnboardingDone = true
                     } label: {
-                        Text("Пропустить")
+                        Text(L10n.Nav.skip)
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatTextSecondary)
                             .padding(.horizontal, 16)
@@ -46,11 +46,11 @@ struct OnboardingView: View {
                 // Bottom button
                 VStack(spacing: 16) {
                     if currentPage == slides.count - 1 {
-                        HatPrimaryButton(title: "Начать игру") {
+                        HatPrimaryButton(title: L10n.Onboarding.start) {
                             isOnboardingDone = true
                         }
                     } else {
-                        HatPrimaryButton(title: "Далее →") {
+                        HatPrimaryButton(title: L10n.Nav.next) {
                             withAnimation {
                                 currentPage += 1
                             }

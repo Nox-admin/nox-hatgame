@@ -33,7 +33,7 @@ struct EmojiPickerView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Выбери аватар")
+            Text(L10n.Players.avatarPicker)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(1)

@@ -3,29 +3,30 @@ import SwiftUI
 /// Экран настроек игры
 struct SettingsView: View {
     @ObservedObject var viewModel: GameViewModel
+    @ObservedObject private var languageManager = LanguageManager.shared
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Настройки")
+            Text(L10n.Settings.title)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
 
             Form {
                 // Длительность раунда
-                Section("Время раунда") {
-                    Picker("Секунды", selection: $viewModel.settings.roundDuration) {
+                Section(L10n.Settings.turnTime) {
+                    Picker("sec", selection: $viewModel.settings.roundDuration) {
                         ForEach(GameSettings.availableDurations, id: \.self) { duration in
-                            Text("\(duration) сек").tag(duration)
+                            Text(L10n.secFull(duration)).tag(duration)
                         }
                     }
                     .pickerStyle(.segmented)
                 }
 
                 // Количество слов
-                Section("Количество слов") {
+                Section(L10n.Settings.hatSize) {
                     Stepper(
-                        "\(viewModel.settings.wordsCount) слов",
+                        L10n.scorePoints(viewModel.settings.wordsCount),
                         value: $viewModel.settings.wordsCount,
                         in: 10...100,
                         step: 10
@@ -33,9 +34,9 @@ struct SettingsView: View {
                 }
 
                 // Сложность
-                Section("Сложность") {
-                    Picker("Уровень", selection: $viewModel.settings.difficulty) {
-                        Text("Все уровни (микс)").tag(nil as WordLevel?)
+                Section(L10n.Settings.difficulty) {
+                    Picker(L10n.Difficulty.choose, selection: $viewModel.settings.difficulty) {
+                        Text(L10n.Difficulty.all).tag(nil as WordLevel?)
                         ForEach(WordLevel.allCases, id: \.rawValue) { level in
                             Text(level.displayName)
                                 .tag(level as WordLevel?)
@@ -44,10 +45,35 @@ struct SettingsView: View {
                 }
 
                 // Правила пропуска
-                Section("Правила") {
-                    Toggle("Разрешить пропуск слов", isOn: $viewModel.settings.allowSkipping)
-                    if viewModel.settings.allowSkipping {
-                        Toggle("Штраф за пропуск (-1 очко)", isOn: $viewModel.settings.penaltyForSkip)
+                Section(L10n.Settings.skipButton) {
+                    Toggle(L10n.Settings.skipSubtitle, isOn: $viewModel.settings.allowSkipping)
+                }
+
+                // Язык приложения
+                Section("settings.language".localized) {
+                    ForEach(AppLanguage.allCases) { lang in
+                        Button {
+                            languageManager.setLanguage(lang)
+                        } label: {
+                            HStack {
+                                Text(lang.flag)
+                                    .font(.title2)
+                                Text(lang.displayName)
+                                    .foregroundStyle(Color.primary)
+                                Spacer()
+                                if languageManager.currentLanguage == lang {
+                                    Image(systemName: "checkmark")
+                                        .foregroundStyle(Color.blue)
+                                        .fontWeight(.semibold)
+                                }
+                            }
+                        }
+                    }
+
+                    if languageManager.restartRequired {
+                        Text("Перезапустите приложение для применения языка")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
@@ -56,7 +82,7 @@ struct SettingsView: View {
             Button {
                 viewModel.goHome()
             } label: {
-                Text("Готово")
+                Text(L10n.Nav.done)
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()

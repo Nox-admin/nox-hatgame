@@ -16,16 +16,20 @@
 		16CA098B9ABA37070D4C3CC5 /* PairsGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53871DA3E97B62071F13C6 /* PairsGameViewModel.swift */; };
 		24B3F3F7A8824F09396A1F0A /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9858822D53C9A94E1119FB /* GameSettings.swift */; };
 		2A260D5EA25CCCBFDE6968EB /* TeamSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78EE0550987B120D77796C /* TeamSetupViewModel.swift */; };
+		1A2B3C4D5E6F7A8B9C0D1E2F /* CountdownOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2 /* CountdownOverlay.swift */; };
 		2B5861D37BBF946996E19CE9 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE872B0245B32BEF5572BC2C /* ConfettiView.swift */; };
 		30898B0C80A79E595A853DD7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971314FFE42296887858736 /* HomeView.swift */; };
 		37B0AA48BF5F433AF437F9ED /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38206EFBCF966D4E613948E /* GameViewModel.swift */; };
 		39546B8EA18014C707034A56 /* HatGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE88244BF73F92D3454EF43 /* HatGameApp.swift */; };
 		48089B9E0F46ED805F18E1ED /* UnifiedFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516196FD1E5B1B5A6196BDB6 /* UnifiedFinalView.swift */; };
 		4B83C8FFF5B8C95F00423680 /* FreeForAllWaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A8D01EAD68F9318635762 /* FreeForAllWaitingView.swift */; };
+		4D5E6F7A8B9C0D1E2F3A4B5C /* ShareResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* ShareResultView.swift */; };
 		4DE0ED5D8578106C5AD45C09 /* SharedPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EDE4B8BF989D1DF52CDD95 /* SharedPauseView.swift */; };
 		5090477A65AC743D04F43866 /* PairsFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD5EACDA96E4BEAF33B1AE /* PairsFinalView.swift */; };
 		5383589EF8EF31393C9A1AAF /* PairsGameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404362FBDCE67BE4F4C4C986 /* PairsGameplayView.swift */; };
 		5E6F7884CC73FD3EB3CA0A94 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50315D9FF82667E6ABDDBB8 /* SettingsView.swift */; };
+		2B3C4D5E6F7A8B9C0D1E2F3A /* PlayerAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* PlayerAvatarView.swift */; };
+		3C4D5E6F7A8B9C0D1E2F3A4B /* PodiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B8C9D0E1F2A3B4 /* PodiumView.swift */; };
 		6D3C1D9A9F3187DD758F9013 /* PhoneHandoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD270D0C03E4A85692B1635 /* PhoneHandoffView.swift */; };
 		6D7CD5680F0A047F34FD3A76 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16647B52A184C90C6D22AD /* Word.swift */; };
 		6DC138969B9304D5D4793BBF /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239C411507DD185064B5A7B /* GameplayView.swift */; };
@@ -69,6 +73,11 @@
 		EFEEFEC9915EAA0FD5E5C698 /* PairsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866283D47110E33755EEA30D /* PairsSchedule.swift */; };
 		F66AE808B2A22225A48C5B38 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = A82D2CB9D353F01DFBD75B81 /* words.json */; };
 		FE3D5667C353597EE4726B6D /* FreeForAllAttributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336FBBA9CDE0E789DE3D9E54 /* FreeForAllAttributionView.swift */; };
+		AA1B2C3D4E5F6A7B8C9D0E1F /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1C2D3E4F5A6B7C8D9E0F1A /* LanguageManager.swift */; };
+		AA2B3C4D5E6F7A8B9C0D1E2F /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2C3D4E5F6A7B8C9D0E1F2A /* L10n.swift */; };
+		AA3B4C5D6E7F8A9B0C1D2E3F /* words_en.json in Resources */ = {isa = PBXBuildFile; fileRef = BB3C4D5E6F7A8B9C0D1E2F3A /* words_en.json */; };
+		AA4B5C6D7E8F9A0B1C2D3E4F /* words_zh.json in Resources */ = {isa = PBXBuildFile; fileRef = BB4C5D6E7F8A9B0C1D2E3F4A /* words_zh.json */; };
+		AA5B6C7D8E9F0A1B2C3D4E5F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB5C6D7E8F9A0B1C2D3E4F5A /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +92,10 @@
 
 /* Begin PBXFileReference section */
 		08AFC009BAFE510D23A54111 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* CountdownOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownOverlay.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* PlayerAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAvatarView.swift; sourceTree = "<group>"; };
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* PodiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumView.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* ShareResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareResultView.swift; sourceTree = "<group>"; };
 		0F12855EF0DACD066CF14C5C /* HatIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatIconView.swift; sourceTree = "<group>"; };
 		12A8CC3671FC1FF9C1CA7A4E /* PostRoundWordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRoundWordListView.swift; sourceTree = "<group>"; };
 		1E5A8D01EAD68F9318635762 /* FreeForAllWaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllWaitingView.swift; sourceTree = "<group>"; };
@@ -147,6 +160,11 @@
 		FE872B0245B32BEF5572BC2C /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		FF8B5A005B5146E18E8D3332 /* FreeForAllGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeForAllGameViewModel.swift; sourceTree = "<group>"; };
 		FF9858822D53C9A94E1119FB /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		BB1C2D3E4F5A6B7C8D9E0F1A /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		BB2C3D4E5F6A7B8C9D0E1F2A /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		BB3C4D5E6F7A8B9C0D1E2F3A /* words_en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words_en.json; sourceTree = "<group>"; };
+		BB4C5D6E7F8A9B0C1D2E3F4A /* words_zh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words_zh.json; sourceTree = "<group>"; };
+		BB5C6D7E8F9A0B1C2D3E4F5A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -171,6 +189,7 @@
 				4181E246A64DB3C0A5FE9870 /* Models */,
 				BB32EBCD51D34D8D23C948EE /* Resources */,
 				7BD16868DF089854FFE64FA5 /* Services */,
+				CC6D7E8F9A0B1C2D3E4F5A6B /* Utils */,
 				A3A099304DB45424FBFF4192 /* ViewModels */,
 				AE536FF19444EB55D9945A1B /* Views */,
 			);
@@ -215,6 +234,7 @@
 				F929D45AA6E3B096838F14A6 /* DeckService.swift */,
 				A5BF514133FC3E379EE5B0B1 /* GameEngine.swift */,
 				A66EA239CE5A2C1D9C7CF66A /* HapticService.swift */,
+				BB1C2D3E4F5A6B7C8D9E0F1A /* LanguageManager.swift */,
 				CC2F4D256E20E903BBC4E647 /* SoundService.swift */,
 				D4D39B0F92AAA0167851510B /* TimerService.swift */,
 			);
@@ -276,10 +296,14 @@
 			isa = PBXGroup;
 			children = (
 				FE872B0245B32BEF5572BC2C /* ConfettiView.swift */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* CountdownOverlay.swift */,
 				554FEFAC37802EF100E985D0 /* GameplayButtonsView.swift */,
 				863E3E1164762DBEEB58AD95 /* HatButton.swift */,
 				0F12855EF0DACD066CF14C5C /* HatIconView.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* PlayerAvatarView.swift */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* PodiumView.swift */,
 				12A8CC3671FC1FF9C1CA7A4E /* PostRoundWordListView.swift */,
+				D4E5F6A7B8C9D0E1F2A3B4C5 /* ShareResultView.swift */,
 				61EDE4B8BF989D1DF52CDD95 /* SharedPauseView.swift */,
 			);
 			path = Components;
@@ -288,9 +312,20 @@
 		BB32EBCD51D34D8D23C948EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB5C6D7E8F9A0B1C2D3E4F5A /* Localizable.xcstrings */,
 				A82D2CB9D353F01DFBD75B81 /* words.json */,
+				BB3C4D5E6F7A8B9C0D1E2F3A /* words_en.json */,
+				BB4C5D6E7F8A9B0C1D2E3F4A /* words_zh.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC6D7E8F9A0B1C2D3E4F5A6B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB2C3D4E5F6A7B8C9D0E1F2A /* L10n.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +391,8 @@
 			knownRegions = (
 				Base,
 				en,
+				ru,
+				"zh-Hans",
 			);
 			mainGroup = 0EF6AE7A95E0F23D4E1DA947;
 			minimizedProjectReferenceProxies = 1;
@@ -376,7 +413,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48115C4BCDEBA0FBC2BE2D9 /* Assets.xcassets in Resources */,
+				AA5B6C7D8E9F0A1B2C3D4E5F /* Localizable.xcstrings in Resources */,
 				F66AE808B2A22225A48C5B38 /* words.json in Resources */,
+				AA3B4C5D6E7F8A9B0C1D2E3F /* words_en.json in Resources */,
+				AA4B5C6D7E8F9A0B1C2D3E4F /* words_zh.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +429,7 @@
 			files = (
 				2B5861D37BBF946996E19CE9 /* ConfettiView.swift in Sources */,
 				85EB5437BE5CBF28164D343A /* ContentView.swift in Sources */,
+				1A2B3C4D5E6F7A8B9C0D1E2F /* CountdownOverlay.swift in Sources */,
 				EBA96480A7058901E79E3D40 /* DeckService.swift in Sources */,
 				7D1732C220A910B2FCA1D19A /* DeckViewModel.swift in Sources */,
 				9986690D694951F3A2D6A408 /* DesignSystem.swift in Sources */,
@@ -412,6 +453,8 @@
 				39546B8EA18014C707034A56 /* HatGameApp.swift in Sources */,
 				C93278EC1DE65CE24E479EA8 /* HatIconView.swift in Sources */,
 				30898B0C80A79E595A853DD7 /* HomeView.swift in Sources */,
+				AA1B2C3D4E5F6A7B8C9D0E1F /* LanguageManager.swift in Sources */,
+				AA2B3C4D5E6F7A8B9C0D1E2F /* L10n.swift in Sources */,
 				8014C416F416E8A99AF55DD4 /* ModeSelectionView.swift in Sources */,
 				9D67627B1F73BDC91F0DEC83 /* ModeSetupViewModel.swift in Sources */,
 				00589CA5C364B2F184F551D5 /* OnboardingView.swift in Sources */,
@@ -424,11 +467,14 @@
 				A5BCC26388740F1DBF0E22E3 /* PairsWaitingView.swift in Sources */,
 				6D3C1D9A9F3187DD758F9013 /* PhoneHandoffView.swift in Sources */,
 				EDDE0B70A43F6E0B8717F383 /* Player.swift in Sources */,
+				2B3C4D5E6F7A8B9C0D1E2F3A /* PlayerAvatarView.swift in Sources */,
 				ADC364A1D677250226A673E8 /* PlayerSetupView.swift in Sources */,
 				E4F224E385D79C1E30B41CE6 /* PlayerSetupViewModel.swift in Sources */,
+				3C4D5E6F7A8B9C0D1E2F3A4B /* PodiumView.swift in Sources */,
 				058496E26C2F9454C3B9FD18 /* PostRoundWordListView.swift in Sources */,
 				8A04E16670435311905A3AFE /* ResultsView.swift in Sources */,
 				5E6F7884CC73FD3EB3CA0A94 /* SettingsView.swift in Sources */,
+				4D5E6F7A8B9C0D1E2F3A4B5C /* ShareResultView.swift in Sources */,
 				4DE0ED5D8578106C5AD45C09 /* SharedPauseView.swift in Sources */,
 				80D9066D4BF7AD6F3BE2A23B /* SoundService.swift in Sources */,
 				DB62B1CE205F422899D5B7EC /* Team.swift in Sources */,

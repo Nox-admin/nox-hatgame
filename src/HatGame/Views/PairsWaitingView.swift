@@ -43,12 +43,12 @@ struct PairsWaitingView: View {
                             playerAvatar(round.guesser)
                         }
 
-                        Text("\(round.explainer.name) объясняет")
+                        Text("\(round.explainer.name) \(L10n.Waiting.explains)")
                             .font(.hatH1)
                             .foregroundStyle(Color.hatTextPrimary)
                             .multilineTextAlignment(.center)
 
-                        Text("\(round.guesser.name) угадывает")
+                        Text("\(round.guesser.name) \(L10n.Waiting.guesses)")
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextSecondary)
                     }
@@ -63,7 +63,7 @@ struct PairsWaitingView: View {
                 Spacer()
 
                 // Кнопка старта
-                HatPrimaryButton(title: "Поехали!") {
+                HatPrimaryButton(title: L10n.Waiting.go) {
                     HapticService.light()
                     showCountdown = true
                 }
@@ -75,7 +75,7 @@ struct PairsWaitingView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "flag.checkered")
-                        Text("Завершить игру")
+                        Text(L10n.Waiting.endGame)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)

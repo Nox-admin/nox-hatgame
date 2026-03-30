@@ -87,7 +87,7 @@ struct UnifiedFinalView: View {
                 .opacity(appeared ? 1 : 0)
                 .animation(.spring(duration: 0.5), value: appeared)
 
-            Text("Игра завершена!")
+            Text(L10n.Final.gameOver)
                 .font(.hatH1)
                 .foregroundStyle(Color.hatTextPrimary)
 
@@ -99,14 +99,14 @@ struct UnifiedFinalView: View {
     private var modeLabel: some View {
         switch result {
         case .players(_, let mode):
-            Text(mode.title)
+            Text(mode.localizedTitle)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 5)
                 .background(Capsule().fill(Color.hatSurface))
         case .teams:
-            Text(GameMode.teams.title)
+            Text(GameMode.teams.localizedTitle)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .padding(.horizontal, 12)
@@ -136,7 +136,7 @@ struct UnifiedFinalView: View {
     @ViewBuilder
     private var leaderboard: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("ИТОГОВЫЙ РЕЙТИНГ")
+            Text(L10n.Final.leaderboard)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -190,11 +190,11 @@ struct UnifiedFinalView: View {
     private var buttons: some View {
         VStack(spacing: 12) {
             if let onPlayAgain {
-                HatPrimaryButton(title: "Играть снова", action: onPlayAgain)
+                HatPrimaryButton(title: L10n.Final.playAgain, action: onPlayAgain)
             }
             ShareResultButton(result: result)
             Button(action: onNewGame) {
-                Text("Новая игра")
+                Text(L10n.Final.newGame)
                     .font(.hatBody)
                     .foregroundStyle(Color.hatTextSecondary)
             }

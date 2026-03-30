@@ -168,3 +168,5 @@
 "guessed_words_suffix" = "слов угадано";
 "score.points" = "%d очков";
 "score.points_total" = "%d очков всего";
+"score_points_short" = "%d очков";
+"score_points_total" = "%d очков всего";

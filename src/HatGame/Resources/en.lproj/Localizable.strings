@@ -168,3 +168,5 @@
 "guessed_words_suffix" = "words guessed";
 "score.points" = "%d pts";
 "score.points_total" = "%d points total";
+"score_points_short" = "%d pts";
+"score_points_total" = "%d points total";

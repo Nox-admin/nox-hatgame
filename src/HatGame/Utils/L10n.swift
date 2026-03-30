@@ -248,9 +248,9 @@ enum L10n {
 
     // MARK: - Score display
     static func pointsShort(_ n: Int) -> String {
-        "score.points".localized(with: n)
+        "score_points_short".localized(with: n)
     }
     static func pointsTotal(_ n: Int) -> String {
-        "score.points_total".localized(with: n)
+        "score_points_total".localized(with: n)
     }
 }

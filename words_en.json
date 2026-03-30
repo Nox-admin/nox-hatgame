@@ -126,7 +126,7 @@
     { "id": "en_115", "text": "daydreaming", "category": "Actions", "difficulty": "easy" },
     { "id": "en_116", "text": "shoplifting", "category": "Actions", "difficulty": "hard" },
     { "id": "en_117", "text": "somersaulting", "category": "Actions", "difficulty": "medium" },
-    { "id": "en_118", "text": "eavesdropping", "category": "Actions", "difficulty": "hard" },
+    { "id": "en_118", "text": "freestyling", "category": "Actions", "difficulty": "hard" },
     { "id": "en_119", "text": "sunbathing", "category": "Actions", "difficulty": "easy" },
     { "id": "en_120", "text": "whistling", "category": "Actions", "difficulty": "easy" },
 

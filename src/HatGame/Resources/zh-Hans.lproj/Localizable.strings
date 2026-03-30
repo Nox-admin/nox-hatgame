@@ -168,3 +168,5 @@
 "guessed_words_suffix" = "个词已猜出";
 "score.points" = "%d 分";
 "score.points_total" = "共 %d 分";
+"score_points_short" = "%d 分";
+"score_points_total" = "共 %d 分";

@@ -1,19 +1,11 @@
+/* App */
+"app.name" = "Шляпа";
+
 /* Home */
 "home.title" = "ШЛЯПА";
-"home.subtitle" = "Игра в слова для компании";
+"home.tagline" = "Игра в слова для компании";
 "home.new_game" = "Новая игра";
 "home.rules" = "Правила";
-
-/* Onboarding */
-"onboarding.skip" = "Пропустить";
-"onboarding.next" = "Далее →";
-"onboarding.start" = "Начать игру";
-"onboarding.slide1.title" = "Игра для компании";
-"onboarding.slide1.subtitle" = "Все за одним телефоном";
-"onboarding.slide2.title" = "Объясни слово";
-"onboarding.slide2.subtitle" = "не называя его. Команда угадывает!";
-"onboarding.slide3.title" = "Собери друзей";
-"onboarding.slide3.subtitle" = "придумай слова — поехали!";
 
 /* Rules */
 "rules.title" = "Правила игры";
@@ -24,67 +16,155 @@
 "rules.5" = "Время ограничено — успейте угадать как можно больше!";
 "rules.6" = "Побеждает команда с наибольшим количеством очков.";
 
-/* Player Setup */
-"player.setup.title" = "Игроки";
-"player.setup.subtitle" = "Введи имя для каждого игрока";
-"player.add" = "Добавить игрока";
-"player.ready" = "Готов →";
+/* Navigation */
+"nav.back" = "Назад";
+"nav.players" = "Игроки";
+"nav.done" = "Готово";
+"nav.skip" = "Пропустить";
+"nav.home" = "На главную";
+"nav.menu" = "Меню";
+"nav.next" = "Далее →";
+"nav.continue" = "Продолжить";
 
-/* Mode Selection */
-"mode.selection.title" = "Режим игры";
-"mode.teams" = "Команды";
-"mode.pairs" = "Пары";
-"mode.freeforall" = "Все сразу";
+/* Onboarding */
+"onboarding.slide1.title" = "Игра для компании";
+"onboarding.slide1.subtitle" = "Все за одним телефоном";
+"onboarding.slide2.title" = "Объясни слово";
+"onboarding.slide2.subtitle" = "не называя его. Команда угадывает!";
+"onboarding.slide3.title" = "Собери друзей";
+"onboarding.slide3.subtitle" = "придумай слова — поехали!";
+"onboarding.start" = "Начать игру";
+
+/* Players */
+"players.add" = "Добавить игрока";
+"players.name_placeholder" = "Имя игрока";
+"players.duplicate_names" = "Имена игроков должны быть уникальными";
+"players.empty_names" = "У всех игроков должны быть имена";
+"players.avatar_picker_title" = "Выбери аватар";
+"players.default_name" = "Игрок %d";
+"players.cannot_delete" = "Минимум %d игроков";
+"players.min_required" = "Нужно минимум %d игрока";
+
+/* Mode */
+"mode.title" = "Режим игры";
+"mode.section" = "РЕЖИМ";
 "mode.start" = "Начать игру";
+"mode.teams.title" = "Командный";
+"mode.teams.description" = "Разбейтесь на команды. Команды соревнуются между собой.";
+"mode.pairs.title" = "Попарный";
+"mode.pairs.description" = "Игроки объясняют по парам. Каждый побывает объяснителем.";
+"mode.ffa.title" = "Все сразу";
+"mode.ffa.description" = "Один объясняет — все остальные угадывают. Побеждает тот, кто угадает больше.";
+"mode.min_players" = "Нужно минимум %d игроков";
 
 /* Settings */
+"settings.section" = "НАСТРОЙКИ";
 "settings.title" = "Настройки";
-"settings.round_time" = "Время раунда";
-"settings.words_count" = "Количество слов";
-"settings.difficulty" = "Сложность";
-"settings.difficulty.all" = "Все уровни (микс)";
-"settings.difficulty.easy" = "Лёгкий";
-"settings.difficulty.medium" = "Средний";
-"settings.difficulty.hard" = "Сложный";
-"settings.rules" = "Правила";
-"settings.allow_skip" = "Разрешить пропуск слов";
-"settings.penalty_skip" = "Штраф за пропуск (-1 очко)";
-"settings.done" = "Готово";
+"settings.game_settings" = "Настройки игры";
+"settings.params" = "Параметры";
+"settings.turn_time" = "Время хода";
+"settings.hat_size" = "Слов в шляпе";
+"settings.skip_button" = "Кнопка «Пропустить»";
+"settings.skip_subtitle" = "Объяснитель может пропускать слова";
+"settings.difficulty" = "Сложность слов";
 "settings.language" = "Язык";
-"settings.sec_format" = "%d сек";
-"settings.words_format" = "%d слов";
+"settings.restart_required" = "Перезапустите приложение для применения языка";
 
-/* Gameplay */
-"game.skip" = "Пропустить";
-"game.guessed" = "Угадано ✓";
-"game.time_left" = "Осталось";
-"game.pause" = "Пауза";
-"game.resume" = "Продолжить";
-"game.exit" = "Выйти";
-"game.ready" = "Готов";
-"game.start_turn" = "Начать ход";
-"game.pass_phone" = "Передай телефон";
-"game.explaining" = "Объясняет";
-"game.guessing" = "Угадывает";
-
-/* Results */
-"results.title" = "Результаты";
-"results.winner" = "Победитель";
-"results.play_again" = "Играть снова";
-"results.home" = "В меню";
-"results.total_words" = "Слов угадано";
-"results.round_score" = "Очков за ход";
+/* Difficulty */
+"difficulty.easy" = "Лёгкий";
+"difficulty.medium" = "Средний";
+"difficulty.hard" = "Сложный";
+"difficulty.all" = "Все уровни";
+"difficulty.choose" = "Выбрать сложность";
+"difficulty.easy.description" = "Простые слова: предметы, животные, известные всем";
+"difficulty.hard.description" = "Абстракции, редкие слова, сложные понятия";
 
 /* Teams */
+"teams.section" = "КОМАНДЫ";
 "teams.add" = "Добавить команду";
-"teams.name_placeholder" = "Название команды";
+"teams.players_section" = "ИГРОКИ";
+"teams.unassigned_hint" = "Перетащите игроков в команды";
+"teams.assign_all" = "Распределить всех игроков по командам";
+"teams.min_two" = "Нужно минимум 2 команды";
+"teams.default_name" = "Команда %d";
+"teams.empty_warning" = "В команде \"%@\" нет игроков";
 
-/* General */
-"button.back" = "Назад";
-"button.continue" = "Продолжить";
-"button.cancel" = "Отмена";
-"button.confirm" = "Подтвердить";
-"label.score" = "Очки";
-"label.round" = "Раунд";
-"label.turn" = "Ход";
-"settings.restart_required" = "Перезапустите приложение для применения языка";
+/* Words */
+"words.section" = "СЛОВА";
+"words.already_added" = "Уже добавлено";
+
+/* Handoff */
+"handoff.title" = "Передай телефон";
+"handoff.pass_to" = "Передай";
+"handoff.close_eyes" = "Закрой глаза";
+"handoff.private_screen" = "Не подглядывай";
+"handoff.ready_suffix" = ", ты готов!";
+"handoff.enter_words_suffix" = ", введи слова";
+
+/* Waiting */
+"waiting.next_turn" = "СЛЕДУЮЩИЙ ХОД";
+"waiting.go" = "Поехали!";
+"waiting.explains_words" = "объясняет слова";
+"waiting.explains_all" = "объясняет всем";
+"waiting.explains_for" = "объясняет за";
+"waiting.explains" = "объясняет";
+"waiting.guesses" = "угадывает";
+"waiting.score" = "Очки";
+"waiting.end_game" = "Завершить игру";
+"waiting.all_pairs_done" = "Все пары сыграли";
+"waiting.words_in_hat" = "Слов в шляпе: %d";
+
+/* Gameplay */
+"gameplay.words_gone" = "Слова закончились";
+"gameplay.words_gone2" = "Шляпа пуста";
+"gameplay.guessed" = "Угадано ✓";
+"gameplay.skip" = "Пропустить";
+"gameplay.pause" = "Пауза";
+"gameplay.resume" = "Продолжить";
+"gameplay.end_early" = "Завершить игру";
+"gameplay.words_left" = "Осталось %d слов";
+"gameplay.explains" = "%@ объясняет";
+
+/* Round */
+"round.ended" = "Раунд завершён!";
+"round.ended2" = "Время вышло";
+"round.circle_ended" = "Круг завершён";
+"round.label" = "Раунд %d";
+"round.of" = "Раунд %d из %d";
+"round.score" = "%d очков";
+"round.guessed" = "Угадано: %d";
+
+/* Turn */
+"turn.ended" = "Ход завершён!";
+"turn.ended2" = "Время вышло";
+"turn.who_guessed" = "Кто угадал?";
+"turn.who_guessed2" = "Отметьте тех, кто угадал";
+"turn.tap_to_correct" = "Нажмите чтобы исправить";
+"turn.tap_who_guessed" = "Отметьте угадавших";
+"turn.words_not_guessed" = "Не угадано";
+"turn.next_team" = "Следующая команда";
+"turn.ended_team" = "%@ — ход завершён";
+"turn.attributed" = "Засчитано %d из %d";
+
+/* Final */
+"final.game_over" = "Игра завершена!";
+"final.game_over2" = "Игра окончена";
+"final.leaderboard" = "ИТОГОВЫЙ РЕЙТИНГ";
+"final.podium" = "ИТОГОВЫЕ МЕСТА";
+"final.winner" = "Победитель";
+"final.winning_team" = "Победившая команда";
+"final.play_again" = "Играть снова";
+"final.play_again2" = "Ещё раунд";
+"final.new_game" = "Новая игра";
+"final.share" = "Поделиться";
+"final.winner_label" = "ПОБЕДИТЕЛЬ";
+"final.results" = "Результаты";
+
+/* Misc */
+"seconds_abbr" = "%d с";
+"sec_full" = "%d сек";
+"score_points" = "%d слов";
+"score_total" = "%@: %d очков";
+"guessed_words_suffix" = "слов угадано";
+"score.points" = "%d очков";
+"score.points_total" = "%d очков всего";

@@ -30,7 +30,7 @@ struct PairsFinalView: View {
                 .font(.system(size: 40))
                 .foregroundStyle(Color.hatGold)
 
-                Text("Игра окончена!")
+                Text(L10n.Final.gameOver2)
                     .font(.hatH1)
                     .foregroundStyle(Color.hatTextPrimary)
 
@@ -49,10 +49,10 @@ struct PairsFinalView: View {
 
                 // Кнопки
                 VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Ещё раз!") {
+                    HatPrimaryButton(title: L10n.Final.playAgain2) {
                         onPlayAgain()
                     }
-                    HatSecondaryButton(title: "В меню") {
+                    HatSecondaryButton(title: L10n.Nav.menu) {
                         onHome()
                     }
                 }

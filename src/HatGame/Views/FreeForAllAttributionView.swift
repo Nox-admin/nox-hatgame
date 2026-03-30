@@ -30,19 +30,19 @@ struct FreeForAllAttributionView: View {
 
     private var header: some View {
         VStack(spacing: 6) {
-            Text("КТО УГАДАЛ?")
+            Text(L10n.Turn.whoGuessed.uppercased())
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(3)
-            Text("Угадано \(viewModel.attributions.count) \(wordEnding(viewModel.attributions.count))")
+            Text(L10n.Turn.attributed(viewModel.attributions.filter { $0.guesser != nil }.count, viewModel.attributions.count))
                 .font(.hatH2)
                 .foregroundStyle(Color.hatGold)
             if let explainer = viewModel.currentExplainer {
-                Text("Объяснял: \(explainer.name)")
+                Text(L10n.Gameplay.explains(explainer.name))
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
-            Text("Нажми кто угадал каждое слово")
+            Text(L10n.Turn.whoGuessed2)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .padding(.top, 4)
@@ -80,7 +80,7 @@ struct FreeForAllAttributionView: View {
             Image(systemName: "tray")
                 .font(.system(size: 48))
                 .foregroundStyle(Color.hatTextSecondary)
-            Text("Слов не угадано")
+            Text(L10n.Turn.wordsNotGuessed)
                 .font(.hatH2)
                 .foregroundStyle(Color.hatTextSecondary)
         }
@@ -96,13 +96,13 @@ struct FreeForAllAttributionView: View {
 
         return VStack(spacing: 8) {
             if !viewModel.attributions.isEmpty {
-                Text("Отмечено: \(attributed) из \(total)")
+                Text(L10n.Turn.attributed(attributed, total))
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
 
             HatPrimaryButton(
-                title: allDone ? "Продолжить" : "Пропустить неотмеченные"
+                title: allDone ? L10n.Nav.continue_ : L10n.Gameplay.skip
             ) {
                 viewModel.confirmAttribution()
             }
@@ -117,18 +117,7 @@ struct FreeForAllAttributionView: View {
         )
     }
 
-    // MARK: - Helpers
-
-    private func wordEnding(_ count: Int) -> String {
-        let mod10 = count % 10
-        let mod100 = count % 100
-        if mod100 >= 11 && mod100 <= 14 { return "слов" }
-        switch mod10 {
-        case 1: return "слово"
-        case 2, 3, 4: return "слова"
-        default: return "слов"
-        }
-    }
+    // wordEnding removed — replaced by L10n.guessedWordsSuffix
 }
 
 // MARK: - WordAttributionRow

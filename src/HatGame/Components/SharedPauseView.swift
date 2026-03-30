@@ -14,14 +14,14 @@ struct SharedPauseView: View {
                 Image(systemName: "pause.circle.fill")
                     .font(.system(size: 52))
                     .foregroundStyle(Color.hatGold)
-                Text("Пауза")
+                Text(L10n.Gameplay.pause)
                     .font(.hatH1)
                     .foregroundStyle(Color.hatTextPrimary)
-                HatPrimaryButton(title: "Продолжить", action: onResume)
+                HatPrimaryButton(title: L10n.Gameplay.resume, action: onResume)
                 Button(action: onEndGame) {
                     HStack(spacing: 6) {
                         Image(systemName: "flag.checkered")
-                        Text("Завершить игру")
+                        Text(L10n.Waiting.endGame)
                     }
                     .font(.hatBody)
                     .foregroundStyle(Color.hatDanger)

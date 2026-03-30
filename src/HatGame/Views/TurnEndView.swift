@@ -11,7 +11,7 @@ struct TurnEndView: View {
             VStack(spacing: 20) {
                 // Header
                 VStack(spacing: 8) {
-                    Text("Ход окончен!")
+                    Text(L10n.Turn.ended)
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
 
@@ -68,12 +68,12 @@ struct TurnEndView: View {
                 }
 
                 // Hint
-                Text("Нажми на слово, чтобы исправить")
+                Text(L10n.Turn.tapToCorrect)
                     .font(.hatCaption)
                     .foregroundStyle(Color(hex: 0x4A3A80))
 
                 // Continue button
-                HatPrimaryButton(title: "Продолжить →") {
+                HatPrimaryButton(title: L10n.Nav.continue_) {
                     viewModel.confirmTurnResults()
                 }
                 .padding(.horizontal, 20)
@@ -84,7 +84,7 @@ struct TurnEndView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "house")
-                        Text("На главную")
+                        Text(L10n.Nav.home)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)

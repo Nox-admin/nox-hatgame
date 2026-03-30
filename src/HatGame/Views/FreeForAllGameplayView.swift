@@ -37,7 +37,7 @@ struct FreeForAllGameplayView: View {
                 if let word = viewModel.currentWord {
                     wordCard(word: word)
                 } else {
-                    Text("Слова закончились")
+                    Text(L10n.Gameplay.wordsGone)
                         .font(.hatH2)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -110,7 +110,7 @@ struct FreeForAllGameplayView: View {
                 Text(viewModel.explainerOrdinal)
                     .font(.hatButton)
                     .foregroundStyle(Color.hatTextPrimary)
-                Text("объясняет всем")
+                Text(L10n.Waiting.explainsAll)
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
@@ -118,10 +118,10 @@ struct FreeForAllGameplayView: View {
             Spacer()
 
             VStack(alignment: .trailing, spacing: 2) {
-                Text("Слов: \(viewModel.wordsRemaining)")
+                Text(L10n.Gameplay.wordsLeft(viewModel.wordsRemaining))
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
-                Text("Угадано: \(viewModel.roundScore)")
+                Text(L10n.Round.guessed(viewModel.roundScore))
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatGold)
             }

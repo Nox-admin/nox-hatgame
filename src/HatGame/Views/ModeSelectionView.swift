@@ -326,7 +326,7 @@ private struct ModeCard: View {
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
                     if !isAvailable {
-                        Text("Нужно минимум \(mode.minPlayers) игроков")
+                        Text(L10n.Mode.minPlayers(mode.minPlayers))
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatDanger.opacity(0.8))
                     }

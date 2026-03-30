@@ -11,7 +11,7 @@ struct TeamBuilderView: View {
         VStack(alignment: .leading, spacing: 16) {
             // Заголовок + кнопки управления
             HStack {
-                Text("КОМАНДЫ")
+                Text(L10n.Teams.section)
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
                     .tracking(2)
@@ -26,7 +26,7 @@ struct TeamBuilderView: View {
                 } label: {
                     HStack(spacing: 4) {
                         Image(systemName: "shuffle")
-                        Text("Авто")
+                        Text(L10n.Nav.done)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatGold)
@@ -90,7 +90,7 @@ struct TeamBuilderView: View {
                 HStack(spacing: 10) {
                     Image(systemName: "plus.circle.fill")
                         .foregroundStyle(Color.hatGold)
-                    Text("Добавить команду")
+                    Text(L10n.Teams.add)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatGold)
                 }
@@ -109,7 +109,7 @@ struct TeamBuilderView: View {
 
     private var unassignedSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Не распределены — нажми игрока, потом выбери команду")
+            Text(L10n.Teams.unassignedHint)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
 
@@ -174,7 +174,7 @@ private struct TeamSlot: View {
 
                 // Имя команды (редактируемое)
                 if editingName {
-                    TextField("Название команды", text: $localName)
+                    TextField(L10n.Teams.add, text: $localName)
                         .font(.hatButton)
                         .foregroundStyle(Color.hatTextPrimary)
                         .textFieldStyle(.plain)
@@ -231,7 +231,7 @@ private struct TeamSlot: View {
                     HStack(spacing: 8) {
                         Image(systemName: selectedPlayer != nil ? "plus.circle.fill" : "person.badge.plus")
                             .foregroundStyle(selectedPlayer != nil ? Color.hatGold : Color.hatTextSecondary)
-                        Text(selectedPlayer != nil ? "Добавить \(selectedPlayer!.name)" : "Нажми игрока выше, потом сюда")
+                        Text(selectedPlayer != nil ? "\(selectedPlayer!.name)" : L10n.Teams.unassignedHint)
                             .font(.hatCaption)
                             .foregroundStyle(selectedPlayer != nil ? Color.hatGold : Color.hatTextSecondary)
                     }

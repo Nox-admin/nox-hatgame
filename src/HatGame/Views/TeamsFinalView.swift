@@ -30,7 +30,7 @@ struct TeamsFinalView: View {
                 .font(.system(size: 40))
                 .foregroundStyle(Color.hatGold)
 
-                Text("Игра завершена!")
+                Text(L10n.Final.gameOver)
                     .font(.hatH1)
                     .foregroundStyle(Color.hatTextPrimary)
 
@@ -49,10 +49,10 @@ struct TeamsFinalView: View {
 
                 // Кнопки
                 VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Ещё раз!") {
+                    HatPrimaryButton(title: L10n.Final.playAgain2) {
                         onPlayAgain()
                     }
-                    HatSecondaryButton(title: "В меню") {
+                    HatSecondaryButton(title: L10n.Nav.menu) {
                         onHome()
                     }
                 }
@@ -86,7 +86,7 @@ struct TeamsFinalView: View {
                     )
                 )
 
-            Text("\(team.score) очков")
+            Text(L10n.pointsShort(team.score))
                 .font(.hatBody)
                 .foregroundStyle(Color.hatTextSecondary)
         }
@@ -119,7 +119,7 @@ struct TeamsFinalView: View {
 
                         Spacer()
 
-                        Text("\(team.score) очков")
+                        Text(L10n.pointsShort(team.score))
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextSecondary)
                     }

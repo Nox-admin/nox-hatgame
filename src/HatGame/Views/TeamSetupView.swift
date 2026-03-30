@@ -33,7 +33,7 @@ struct TeamSetupView: View {
                 }
 
                 // Bottom button
-                HatPrimaryButton(title: "Далее →") {
+                HatPrimaryButton(title: L10n.Nav.next) {
                     viewModel.difficulty = selectedDifficulty
                     onContinue()
                 }
@@ -47,7 +47,7 @@ struct TeamSetupView: View {
         .onAppear {
             selectedDifficulty = viewModel.difficulty
         }
-        .alert("Ошибка", isPresented: Binding(
+        .alert(L10n.Final.results, isPresented: Binding(
             get: { viewModel.errorMessage != nil },
             set: { if !$0 { viewModel.errorMessage = nil } }
         )) {
@@ -66,7 +66,7 @@ struct TeamSetupView: View {
             } label: {
                 HStack(spacing: 4) {
                     Image(systemName: "chevron.left")
-                    Text("Назад")
+                    Text(L10n.Nav.back)
                 }
                 .font(.hatBody)
                 .foregroundStyle(Color.hatGold)
@@ -74,14 +74,14 @@ struct TeamSetupView: View {
 
             Spacer()
 
-            Text("Настройки игры")
+            Text(L10n.Settings.gameSettings)
                 .font(.hatButton)
                 .foregroundStyle(Color.hatTextPrimary)
 
             Spacer()
 
             // Invisible spacer for centering
-            Text("Назад")
+            Text(L10n.Nav.back)
                 .font(.hatBody)
                 .opacity(0)
         }
@@ -93,7 +93,7 @@ struct TeamSetupView: View {
 
     private var playersSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("ИГРОКИ")
+            Text(L10n.Teams.playersSection)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -144,7 +144,7 @@ struct TeamSetupView: View {
                                     .foregroundStyle(Color.hatGold)
                             )
 
-                        Text("Добавить игрока")
+                        Text(L10n.Players.add)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatGold)
 
@@ -165,7 +165,7 @@ struct TeamSetupView: View {
 
     private var parametersSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("ПАРАМЕТРЫ")
+            Text(L10n.Settings.params)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -176,7 +176,7 @@ struct TeamSetupView: View {
 
                 // Turn duration
                 HStack {
-                    Text("Время хода")
+                    Text(L10n.Settings.turnTime)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextPrimary)
 
@@ -224,7 +224,7 @@ struct TeamSetupView: View {
 
     private var dictionarySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("СЛОВАРЬ")
+            Text(L10n.Words.section)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
                 .tracking(2)
@@ -292,7 +292,7 @@ private struct PlayerRow: View {
 
             // Name
             if isEditing {
-                TextField("Имя", text: $name)
+                TextField(L10n.Players.namePlaceholder, text: $name)
                     .font(.hatBody)
                     .foregroundStyle(Color.hatTextPrimary)
                     .textFieldStyle(.plain)
@@ -338,7 +338,7 @@ private struct PlayerRow: View {
                 Button(role: .destructive) {
                     onDelete()
                 } label: {
-                    Label("Удалить", systemImage: "trash")
+                    Label(L10n.Nav.back, systemImage: "trash")
                 }
             }
         }

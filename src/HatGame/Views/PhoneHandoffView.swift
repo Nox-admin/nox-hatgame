@@ -35,12 +35,12 @@ struct PhoneHandoffView: View {
                 }
 
                 VStack(spacing: 16) {
-                    Text("ЗАКРОЙ ГЛАЗА")
+                    Text(L10n.Handoff.closeEyes.uppercased())
                         .font(.hatDisplay)
                         .foregroundStyle(Color.hatTextPrimary)
                         .tracking(4)
 
-                    Text("Передай телефон игроку")
+                    Text(L10n.Handoff.title)
                         .font(.hatH2)
                         .foregroundStyle(Color.hatTextSecondary)
 
@@ -53,7 +53,7 @@ struct PhoneHandoffView: View {
 
                 // Кнопка появляется через 2 секунды
                 if showButton {
-                    HatPrimaryButton(title: "Готов") { onReady() }
+                    HatPrimaryButton(title: L10n.Nav.done) { onReady() }
                         .padding(.horizontal, 20)
                         .transition(.opacity.combined(with: .move(edge: .bottom)))
                 } else {

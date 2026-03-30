@@ -44,7 +44,7 @@ struct FreeForAllWaitingView: View {
 
                 // Мини-рейтинг
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("СЧЁТ")
+                    Text(L10n.Waiting.score.uppercased())
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(2)

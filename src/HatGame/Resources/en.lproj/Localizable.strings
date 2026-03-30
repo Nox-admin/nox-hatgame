@@ -1,19 +1,11 @@
+/* App */
+"app.name" = "Hat Game";
+
 /* Home */
 "home.title" = "HAT GAME";
-"home.subtitle" = "Word game for a group";
+"home.tagline" = "Word game for a group";
 "home.new_game" = "New Game";
 "home.rules" = "Rules";
-
-/* Onboarding */
-"onboarding.skip" = "Skip";
-"onboarding.next" = "Next →";
-"onboarding.start" = "Start Game";
-"onboarding.slide1.title" = "Party Game";
-"onboarding.slide1.subtitle" = "Everyone on one phone";
-"onboarding.slide2.title" = "Explain the Word";
-"onboarding.slide2.subtitle" = "without saying it. Team guesses!";
-"onboarding.slide3.title" = "Gather Friends";
-"onboarding.slide3.subtitle" = "think up words — let's go!";
 
 /* Rules */
 "rules.title" = "How to Play";
@@ -24,67 +16,155 @@
 "rules.5" = "Time is limited — guess as many as you can!";
 "rules.6" = "The team with the most points wins.";
 
-/* Player Setup */
-"player.setup.title" = "Players";
-"player.setup.subtitle" = "Enter a name for each player";
-"player.add" = "Add Player";
-"player.ready" = "Ready →";
+/* Navigation */
+"nav.back" = "Back";
+"nav.players" = "Players";
+"nav.done" = "Done";
+"nav.skip" = "Skip";
+"nav.home" = "Home";
+"nav.menu" = "Menu";
+"nav.next" = "Next →";
+"nav.continue" = "Continue";
 
-/* Mode Selection */
-"mode.selection.title" = "Game Mode";
-"mode.teams" = "Teams";
-"mode.pairs" = "Pairs";
-"mode.freeforall" = "Free for All";
+/* Onboarding */
+"onboarding.slide1.title" = "Party Game";
+"onboarding.slide1.subtitle" = "Everyone on one phone";
+"onboarding.slide2.title" = "Explain the Word";
+"onboarding.slide2.subtitle" = "without saying it. Team guesses!";
+"onboarding.slide3.title" = "Gather Friends";
+"onboarding.slide3.subtitle" = "think up words — let's go!";
+"onboarding.start" = "Start Game";
+
+/* Players */
+"players.add" = "Add Player";
+"players.name_placeholder" = "Player name";
+"players.duplicate_names" = "Players must have unique names";
+"players.empty_names" = "All players must have names";
+"players.avatar_picker_title" = "Choose avatar";
+"players.default_name" = "Player %d";
+"players.cannot_delete" = "Minimum %d players required";
+"players.min_required" = "Need at least %d players";
+
+/* Mode */
+"mode.title" = "Game Mode";
+"mode.section" = "MODE";
 "mode.start" = "Start Game";
+"mode.teams.title" = "Teams";
+"mode.teams.description" = "Split into teams. Teams compete against each other.";
+"mode.pairs.title" = "Pairs";
+"mode.pairs.description" = "Players explain in pairs. Everyone gets to be the explainer.";
+"mode.ffa.title" = "Free for All";
+"mode.ffa.description" = "One explains — everyone else guesses. Most guesses wins.";
+"mode.min_players" = "Need at least %d players";
 
 /* Settings */
+"settings.section" = "SETTINGS";
 "settings.title" = "Settings";
-"settings.round_time" = "Round Duration";
-"settings.words_count" = "Word Count";
+"settings.game_settings" = "Game Settings";
+"settings.params" = "Parameters";
+"settings.turn_time" = "Turn Duration";
+"settings.hat_size" = "Words in Hat";
+"settings.skip_button" = "Skip Button";
+"settings.skip_subtitle" = "Explainer can skip words";
 "settings.difficulty" = "Difficulty";
-"settings.difficulty.all" = "All Levels (Mix)";
-"settings.difficulty.easy" = "Easy";
-"settings.difficulty.medium" = "Medium";
-"settings.difficulty.hard" = "Hard";
-"settings.rules" = "Rules";
-"settings.allow_skip" = "Allow Word Skip";
-"settings.penalty_skip" = "Penalty for skip (-1 point)";
-"settings.done" = "Done";
 "settings.language" = "Language";
-"settings.sec_format" = "%d sec";
-"settings.words_format" = "%d words";
+"settings.restart_required" = "Restart the app to apply the new language";
 
-/* Gameplay */
-"game.skip" = "Skip";
-"game.guessed" = "Guessed ✓";
-"game.time_left" = "Time left";
-"game.pause" = "Pause";
-"game.resume" = "Resume";
-"game.exit" = "Exit";
-"game.ready" = "Ready";
-"game.start_turn" = "Start Turn";
-"game.pass_phone" = "Pass the Phone";
-"game.explaining" = "Explaining";
-"game.guessing" = "Guessing";
-
-/* Results */
-"results.title" = "Results";
-"results.winner" = "Winner";
-"results.play_again" = "Play Again";
-"results.home" = "Home";
-"results.total_words" = "Words Guessed";
-"results.round_score" = "Points This Turn";
+/* Difficulty */
+"difficulty.easy" = "Easy";
+"difficulty.medium" = "Medium";
+"difficulty.hard" = "Hard";
+"difficulty.all" = "All Levels";
+"difficulty.choose" = "Choose difficulty";
+"difficulty.easy.description" = "Simple words: objects, animals, well-known things";
+"difficulty.hard.description" = "Abstract concepts, rare words, complex ideas";
 
 /* Teams */
+"teams.section" = "TEAMS";
 "teams.add" = "Add Team";
-"teams.name_placeholder" = "Team Name";
+"teams.players_section" = "PLAYERS";
+"teams.unassigned_hint" = "Drag players into teams";
+"teams.assign_all" = "Assign all players to teams";
+"teams.min_two" = "Need at least 2 teams";
+"teams.default_name" = "Team %d";
+"teams.empty_warning" = "Team \"%@\" has no players";
 
-/* General */
-"button.back" = "Back";
-"button.continue" = "Continue";
-"button.cancel" = "Cancel";
-"button.confirm" = "Confirm";
-"label.score" = "Score";
-"label.round" = "Round";
-"label.turn" = "Turn";
-"settings.restart_required" = "Restart the app to apply the new language";
+/* Words */
+"words.section" = "WORDS";
+"words.already_added" = "Already added";
+
+/* Handoff */
+"handoff.title" = "Pass the phone";
+"handoff.pass_to" = "Pass to";
+"handoff.close_eyes" = "Close your eyes";
+"handoff.private_screen" = "Don't peek";
+"handoff.ready_suffix" = ", you're ready!";
+"handoff.enter_words_suffix" = ", enter your words";
+
+/* Waiting */
+"waiting.next_turn" = "NEXT TURN";
+"waiting.go" = "Let's go!";
+"waiting.explains_words" = "explains words";
+"waiting.explains_all" = "explains to everyone";
+"waiting.explains_for" = "explains for";
+"waiting.explains" = "explains";
+"waiting.guesses" = "guesses";
+"waiting.score" = "Score";
+"waiting.end_game" = "End Game";
+"waiting.all_pairs_done" = "All pairs have played";
+"waiting.words_in_hat" = "Words in hat: %d";
+
+/* Gameplay */
+"gameplay.words_gone" = "No words left";
+"gameplay.words_gone2" = "Hat is empty";
+"gameplay.guessed" = "Guessed ✓";
+"gameplay.skip" = "Skip";
+"gameplay.pause" = "Pause";
+"gameplay.resume" = "Resume";
+"gameplay.end_early" = "End Game";
+"gameplay.words_left" = "%d words left";
+"gameplay.explains" = "%@ explains";
+
+/* Round */
+"round.ended" = "Round over!";
+"round.ended2" = "Time's up";
+"round.circle_ended" = "Full circle done";
+"round.label" = "Round %d";
+"round.of" = "Round %d of %d";
+"round.score" = "%d points";
+"round.guessed" = "Guessed: %d";
+
+/* Turn */
+"turn.ended" = "Turn over!";
+"turn.ended2" = "Time's up";
+"turn.who_guessed" = "Who guessed?";
+"turn.who_guessed2" = "Tap those who guessed correctly";
+"turn.tap_to_correct" = "Tap to fix";
+"turn.tap_who_guessed" = "Tap who guessed";
+"turn.words_not_guessed" = "Not guessed";
+"turn.next_team" = "Next team";
+"turn.ended_team" = "%@ — turn over";
+"turn.attributed" = "Attributed %d of %d";
+
+/* Final */
+"final.game_over" = "Game Over!";
+"final.game_over2" = "That's a wrap";
+"final.leaderboard" = "LEADERBOARD";
+"final.podium" = "FINAL STANDINGS";
+"final.winner" = "Winner";
+"final.winning_team" = "Winning Team";
+"final.play_again" = "Play Again";
+"final.play_again2" = "One More Round";
+"final.new_game" = "New Game";
+"final.share" = "Share";
+"final.winner_label" = "WINNER";
+"final.results" = "Results";
+
+/* Misc */
+"seconds_abbr" = "%d s";
+"sec_full" = "%d sec";
+"score_points" = "%d words";
+"score_total" = "%@: %d pts";
+"guessed_words_suffix" = "words guessed";
+"score.points" = "%d pts";
+"score.points_total" = "%d points total";

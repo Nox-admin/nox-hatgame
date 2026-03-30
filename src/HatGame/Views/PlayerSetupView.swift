@@ -298,7 +298,7 @@ private struct PlayerInputRow: View {
         .swipeActions(edge: .trailing, allowsFullSwipe: canDelete) {
             if canDelete {
                 Button(role: .destructive, action: onDelete) {
-                    Label("Удалить", systemImage: "trash")
+                    Label(L10n.Nav.back, systemImage: "trash")
                 }
             }
         }

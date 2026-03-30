@@ -13,7 +13,7 @@ struct PairsRoundEndView: View {
             VStack(spacing: 20) {
                 // Заголовок
                 VStack(spacing: 8) {
-                    Text("Раунд окончен!")
+                    Text(L10n.Round.ended)
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
 
@@ -51,15 +51,15 @@ struct PairsRoundEndView: View {
                 }
 
                 // Подсказка
-                Text("Нажми на слово, чтобы исправить")
+                Text(L10n.Turn.tapToCorrect)
                     .font(.hatCaption)
                     .foregroundStyle(Color(hex: 0x4A3A80))
 
                 // Кнопка продолжения
                 HatPrimaryButton(
                     title: (viewModel.wordDeck.isEmpty || viewModel.isLastRound)
-                        ? "Финал"
-                        : "Продолжить"
+                        ? L10n.Final.results
+                        : L10n.Nav.continue_
                 ) {
                     HapticService.light()
                     viewModel.confirmRound()

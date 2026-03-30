@@ -106,7 +106,7 @@ struct PairsGameplayView: View {
                 }
             }
             Spacer()
-            Text("Слов: \(viewModel.wordsRemaining)")
+            Text(L10n.Gameplay.wordsLeft(viewModel.wordsRemaining))
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
             // BUG-044: пауза в topBar — единое расположение во всех режимах
@@ -147,7 +147,7 @@ struct PairsGameplayView: View {
                     .offset(x: cardSlideX, y: wordCardAppeared ? 0 : 60)
                     .opacity(wordCardAppeared ? 1 : 0)
             } else {
-                Text("Слова закончились!")
+                Text(L10n.Gameplay.wordsGone)
                     .font(.hatH2)
                     .foregroundStyle(Color.hatTextSecondary)
             }

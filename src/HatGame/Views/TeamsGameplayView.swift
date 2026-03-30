@@ -102,7 +102,7 @@ struct TeamsGameplayView: View {
                         .foregroundStyle(Color.hatTextPrimary)
                 }
                 if let explainer = viewModel.currentExplainer {
-                    Text("Объясняет: \(explainer.name)")
+                    Text(L10n.Gameplay.explains(explainer.name))
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -110,7 +110,7 @@ struct TeamsGameplayView: View {
 
             Spacer()
 
-            Text("Осталось: \(viewModel.wordsRemaining) слов")
+            Text(L10n.Gameplay.wordsLeft(viewModel.wordsRemaining))
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
             // BUG-044: пауза в topBar — единое расположение во всех режимах
@@ -151,7 +151,7 @@ struct TeamsGameplayView: View {
                     .offset(x: cardSlideX, y: wordCardAppeared ? 0 : 60)
                     .opacity(wordCardAppeared ? 1 : 0)
             } else {
-                Text("Слова закончились!")
+                Text(L10n.Gameplay.wordsGone)
                     .font(.hatH2)
                     .foregroundStyle(Color.hatTextSecondary)
             }

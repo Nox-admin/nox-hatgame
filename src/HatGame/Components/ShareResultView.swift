@@ -11,7 +11,7 @@ struct ShareResultCardView: View {
             VStack(spacing: 8) {
                 Text("🎩")
                     .font(.system(size: 44))
-                Text("Шляпа")
+                Text(L10n.appName)
                     .font(.system(size: 22, weight: .heavy, design: .rounded))
                     .foregroundStyle(Color.hatGold)
             }

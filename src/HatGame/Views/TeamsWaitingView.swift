@@ -12,7 +12,7 @@ struct TeamsWaitingView: View {
 
             VStack(spacing: 24) {
                 // Номер раунда
-                Text("РАУНД \(viewModel.currentRound + 1)")
+                Text(L10n.Round.label(viewModel.currentRound + 1).uppercased())
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
                     .tracking(3)

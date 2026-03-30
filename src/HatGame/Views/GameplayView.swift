@@ -70,17 +70,17 @@ struct GameplayView: View {
     private var topBar: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text(viewModel.currentTeam?.name ?? "Команда")
+                Text(viewModel.currentTeam?.name ?? L10n.Waiting.score)
                     .font(.hatButton)
                     .foregroundStyle(Color.hatTextPrimary)
                 if let explainer = viewModel.currentTeam?.currentExplainer {
-                    Text("Объясняет: \(explainer.name)")
+                    Text(L10n.Gameplay.explains(explainer.name))
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
             }
             Spacer()
-            Text("Осталось: \(viewModel.wordsRemaining) слов")
+            Text(L10n.Gameplay.wordsLeft(viewModel.wordsRemaining))
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
         }
@@ -107,7 +107,7 @@ struct GameplayView: View {
                     .opacity(wordCardAppeared ? 1 : 0)
                     .animation(.spring(duration: 0.5, bounce: 0.3), value: wordCardAppeared)
             } else {
-                Text("Слова закончились!")
+                Text(L10n.Gameplay.wordsGone)
                     .font(.hatH2)
                     .foregroundStyle(Color.hatTextSecondary)
             }
@@ -159,7 +159,7 @@ struct GameplayView: View {
                     HatGameActionButton(icon: "✕", color: .hatDanger) {
                         viewModel.skipWord()
                     }
-                    Text("Пропустить")
+                    Text(L10n.Gameplay.skip)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -169,7 +169,7 @@ struct GameplayView: View {
                 HatGameActionButton(icon: "✓", color: .hatSuccess) {
                     viewModel.guessWord()
                 }
-                Text("Угадали")
+                Text(L10n.Gameplay.guessed)
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
@@ -186,7 +186,7 @@ struct GameplayView: View {
                         .background(Color.hatSurface)
                         .clipShape(Circle())
                 }
-                Text("Пауза")
+                Text(L10n.Gameplay.pause)
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
             }
@@ -200,11 +200,11 @@ struct GameplayView: View {
             Image(systemName: "pause.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(Color.hatGold)
-            Text("Пауза")
+            Text(L10n.Gameplay.pause)
                 .font(.hatH1)
                 .foregroundStyle(Color.hatTextPrimary)
 
-            HatPrimaryButton(title: "Продолжить") {
+            HatPrimaryButton(title: L10n.Nav.continue_) {
                 viewModel.resumeGame()
             }
             .padding(.horizontal, 40)
@@ -215,7 +215,7 @@ struct GameplayView: View {
             } label: {
                 HStack(spacing: 6) {
                     Image(systemName: "house")
-                    Text("Закончить игру")
+                    Text(L10n.Waiting.endGame)
                 }
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary)
@@ -231,16 +231,16 @@ struct GameplayView: View {
                 .font(.system(size: 56))
                 .foregroundStyle(Color.hatGold)
 
-            Text("Раунд завершён!")
+            Text(L10n.Round.ended)
                 .font(.hatH1)
                 .foregroundStyle(Color.hatTextPrimary)
 
-            Text("Очков за раунд: \(viewModel.roundScore)")
+            Text(L10n.Round.score(viewModel.roundScore))
                 .font(.hatH2)
                 .foregroundStyle(Color.hatGold)
 
             if let team = viewModel.currentTeam {
-                Text("\(team.name): \(team.score) очков всего")
+                Text(L10n.scoreTotal(team: team.name, score: team.score))
                     .font(.hatBody)
                     .foregroundStyle(Color.hatTextSecondary)
             }
@@ -255,7 +255,7 @@ struct GameplayView: View {
     }
 
     private var roundEndButtons: some View {
-        HatPrimaryButton(title: "Ход следующей команды") {
+        HatPrimaryButton(title: L10n.Turn.nextTeam) {
             viewModel.nextTeam()
         }
     }

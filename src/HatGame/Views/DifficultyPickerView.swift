@@ -65,7 +65,7 @@ struct DifficultyPickerView: View {
             Color.hatBackground.ignoresSafeArea()
 
             VStack(spacing: 24) {
-                Text("Выбери уровень слов")
+                Text(L10n.Difficulty.choose)
                     .font(.hatH2)
                     .foregroundStyle(Color.hatTextPrimary)
                     .padding(.top, 32)
@@ -86,7 +86,7 @@ struct DifficultyPickerView: View {
                     .padding(.horizontal, 20)
                 }
 
-                HatPrimaryButton(title: "Выбрать") {
+                HatPrimaryButton(title: L10n.Nav.done) {
                     dismiss()
                 }
                 .padding(.horizontal, 20)

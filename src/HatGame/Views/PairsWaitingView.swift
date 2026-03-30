@@ -16,12 +16,12 @@ struct PairsWaitingView: View {
                 // Прогресс
                 if let round = viewModel.currentRound {
                     VStack(spacing: 4) {
-                        Text("Раунд \(viewModel.currentRoundIndex + 1) из \(viewModel.schedule.totalRounds)")
+                        Text(L10n.Round.of(viewModel.currentRoundIndex + 1, viewModel.schedule.totalRounds))
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatTextSecondary)
                             .tracking(2)
 
-                        Text("Круг \(round.circle)")
+                        Text(L10n.Round.label(round.circle))
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatTextSecondary)
                     }

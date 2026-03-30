@@ -28,7 +28,7 @@ struct EndTurnButton: View {
 
     var body: some View {
         Button(action: action) {
-            Text("Завершить ход досрочно")
+            Text(L10n.Gameplay.endEarly)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatTextSecondary.opacity(0.7))
         }

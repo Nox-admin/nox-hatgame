@@ -20,7 +20,7 @@ struct FreeForAllFinalView: View {
                         .font(.system(size: 48, weight: .semibold))
                         .foregroundStyle(Color.hatGold)
 
-                    Text("Игра завершена!")
+                    Text(L10n.Final.gameOver)
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
                 }
@@ -35,7 +35,7 @@ struct FreeForAllFinalView: View {
 
                 // Полный рейтинг
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("ИТОГОВЫЙ РЕЙТИНГ")
+                    Text(L10n.Final.leaderboard)
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(2)
@@ -49,10 +49,10 @@ struct FreeForAllFinalView: View {
 
                 // Кнопки
                 VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Ещё раз!", action: onPlayAgain)
+                    HatPrimaryButton(title: L10n.Final.playAgain2, action: onPlayAgain)
 
                     Button(action: onHome) {
-                        Text("В меню")
+                        Text(L10n.Nav.menu)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextSecondary)
                     }

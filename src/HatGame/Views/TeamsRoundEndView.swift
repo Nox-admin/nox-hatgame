@@ -15,12 +15,12 @@ struct TeamsRoundEndView: View {
                 // Заголовок
                 VStack(spacing: 8) {
                     if let team = viewModel.currentTeam {
-                        Text("Ход команды \(team.name) завершён")
+                        Text(L10n.Turn.endedTeam(team.name))
                             .font(.hatH1)
                             .foregroundStyle(Color.hatTextPrimary)
                             .multilineTextAlignment(.center)
                     } else {
-                        Text("Ход завершён")
+                        Text(L10n.Turn.ended)
                             .font(.hatH1)
                             .foregroundStyle(Color.hatTextPrimary)
                     }
@@ -31,7 +31,7 @@ struct TeamsRoundEndView: View {
                         .contentTransition(.numericText())
                         .animation(.easeOut, value: displayedScore)
 
-                    Text("угадано слов")
+                    Text(L10n.Round.ended2)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -48,12 +48,12 @@ struct TeamsRoundEndView: View {
                 }
 
                 // Подсказка
-                Text("Нажми на слово, чтобы исправить")
+                Text(L10n.Turn.tapToCorrect)
                     .font(.hatCaption)
                     .foregroundStyle(Color(hex: 0x4A3A80))
 
                 // Кнопка продолжения
-                HatPrimaryButton(title: "Продолжить") {
+                HatPrimaryButton(title: L10n.Nav.continue_) {
                     HapticService.light()
                     viewModel.confirmRound()
                 }
@@ -65,7 +65,7 @@ struct TeamsRoundEndView: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "house")
-                        Text("На главную")
+                        Text(L10n.Nav.home)
                     }
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)

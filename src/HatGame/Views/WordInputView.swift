@@ -30,13 +30,13 @@ struct WordInputView: View {
                 .padding(.top, 16)
 
             // Player heading
-            Text("\(viewModel.currentWordInputPlayer?.name ?? ""), введи слова")
+            Text("\(viewModel.currentWordInputPlayer?.name ?? "")\(L10n.Handoff.enterWordsSuffix)")
                 .font(.hatH1)
                 .foregroundStyle(Color.hatTextPrimary)
 
             // Progress text — BUG-012: нет фиксированного лимита, показываем сколько добавлено
             let addedCount = viewModel.enteredWordsForCurrentPlayer.count
-            Text(addedCount == 0 ? "Добавь хотя бы одно слово" : "Добавлено слов: \(addedCount)")
+            Text(addedCount == 0 ? L10n.Words.alreadyAdded : L10n.Round.guessed(addedCount))
                 .font(.hatBody)
                 .foregroundStyle(addedCount == 0 ? Color.hatTextSecondary : Color.hatGold)
 
@@ -44,7 +44,7 @@ struct WordInputView: View {
 
             // Text field
             VStack(spacing: 16) {
-                TextField("Введи слово...", text: $currentWordText)
+                TextField(L10n.Players.namePlaceholder, text: $currentWordText)
                     .font(.hatH2)
                     .foregroundStyle(Color.hatTextPrimary)
                     .padding(16)
@@ -67,7 +67,7 @@ struct WordInputView: View {
                 // Already added words
                 if !viewModel.enteredWordsForCurrentPlayer.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Уже добавлено:")
+                        Text(L10n.Words.alreadyAdded)
                             .font(.hatCaption)
                             .foregroundStyle(Color.hatTextSecondary)
 
@@ -92,7 +92,7 @@ struct WordInputView: View {
             Spacer()
 
             // Add button
-            HatPrimaryButton(title: "Добавить →") {
+            HatPrimaryButton(title: L10n.Mode.start) {
                 submitWord()
             }
             .disabled(currentWordText.trimmingCharacters(in: .whitespaces).isEmpty)
@@ -101,7 +101,7 @@ struct WordInputView: View {
 
             // BUG-012: кнопка "Готово" появляется как только добавлено ≥1 слово (нет фиксированного лимита)
             if viewModel.enteredWordsForCurrentPlayer.count >= 1 {
-                HatSecondaryButton(title: "Готово ✓") {
+                HatSecondaryButton(title: L10n.Nav.done) {
                     viewModel.isCurrentPlayerDone = true
                 }
                 .padding(.horizontal, 20)
@@ -122,14 +122,14 @@ struct WordInputView: View {
                     .font(.system(size: 64))
                     .foregroundStyle(Color.hatSuccess)
 
-                Text("\(viewModel.currentWordInputPlayer?.name ?? ""), ты готов!")
+                Text("\(viewModel.currentWordInputPlayer?.name ?? "")\(L10n.Handoff.readySuffix)")
                     .font(.hatH1)
                     .foregroundStyle(Color.hatTextPrimary)
                     .multilineTextAlignment(.center)
 
                 if !viewModel.isLastPlayer, let nextPlayer = viewModel.nextWordInputPlayer {
                     VStack(spacing: 8) {
-                        Text("Передай телефон")
+                        Text(L10n.Handoff.title)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextSecondary)
 
@@ -155,7 +155,7 @@ struct WordInputView: View {
             Spacer()
 
             // Continue button
-            HatPrimaryButton(title: viewModel.isLastPlayer ? "Начать игру →" : "Готов →") {
+            HatPrimaryButton(title: viewModel.isLastPlayer ? L10n.Onboarding.start : L10n.Nav.done) {
                 viewModel.moveToNextPlayer()
             }
             .padding(.horizontal, 20)
@@ -169,7 +169,7 @@ struct WordInputView: View {
         HStack(spacing: 8) {
             Image(systemName: "eye.slash.fill")
                 .foregroundStyle(Color.hatGold)
-            Text("Только ты видишь этот экран")
+            Text(L10n.Handoff.privateScreen)
                 .font(.hatCaption)
                 .foregroundStyle(Color.hatGold)
         }

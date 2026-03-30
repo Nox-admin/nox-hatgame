@@ -22,11 +22,11 @@ struct PairsCircleEndView: View {
                             .foregroundStyle(Color.hatGold)
                     }
 
-                    Text("Круг завершён!")
+                    Text(L10n.Round.circleEnded)
                         .font(.hatH1)
                         .foregroundStyle(Color.hatTextPrimary)
 
-                    Text("Все пары отыграли по одному разу")
+                    Text(L10n.Waiting.allPairsDone)
                         .font(.hatBody)
                         .foregroundStyle(Color.hatTextSecondary)
                         .multilineTextAlignment(.center)
@@ -35,7 +35,7 @@ struct PairsCircleEndView: View {
 
                 // Мини-рейтинг
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("СЧЁТ")
+                    Text(L10n.Waiting.score.uppercased())
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                         .tracking(2)
@@ -76,14 +76,14 @@ struct PairsCircleEndView: View {
 
                 // Кнопки
                 VStack(spacing: 12) {
-                    HatPrimaryButton(title: "Сыграть ещё круг") {
+                    HatPrimaryButton(title: L10n.Final.playAgain2) {
                         viewModel.continueNextCircle()
                     }
 
                     Button {
                         viewModel.endGameEarly()
                     } label: {
-                        Text("Завершить игру")
+                        Text(L10n.Waiting.endGame)
                             .font(.hatBody)
                             .foregroundStyle(Color.hatTextSecondary)
                     }

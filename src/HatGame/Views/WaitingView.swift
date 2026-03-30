@@ -11,7 +11,7 @@ struct WaitingView: View {
 
             VStack(spacing: 24) {
                 // Round label
-                Text("РАУНД \(viewModel.currentRound)")
+                Text(L10n.Round.label(viewModel.currentRound).uppercased())
                     .font(.hatCaption)
                     .foregroundStyle(Color.hatTextSecondary)
                     .tracking(3)

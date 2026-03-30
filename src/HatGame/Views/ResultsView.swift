@@ -13,7 +13,7 @@ struct ResultsView: View {
                 Image(systemName: "trophy.fill")
                     .font(.system(size: 64))
                     .foregroundStyle(Color.hatGold)
-                Text("Игра окончена!")
+                Text(L10n.Final.gameOver2)
                     .font(.title)
                     .fontWeight(.bold)
             }
@@ -21,7 +21,7 @@ struct ResultsView: View {
             // Победитель
             if let winner = viewModel.engine.winner {
                 VStack(spacing: 4) {
-                    Text("Победитель:")
+                    Text(L10n.Final.winner)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     Text(winner.name)
@@ -35,7 +35,7 @@ struct ResultsView: View {
 
             // Таблица результатов
             VStack(spacing: 12) {
-                Text("Результаты")
+                Text(L10n.Final.results)
                     .font(.headline)
 
                 ForEach(Array(viewModel.standings.enumerated()), id: \.element.id) { index, team in
@@ -68,7 +68,7 @@ struct ResultsView: View {
                 Button {
                     viewModel.playAgain()
                 } label: {
-                    Text("Играть ещё раз")
+                    Text(L10n.Final.playAgain)
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -80,7 +80,7 @@ struct ResultsView: View {
                 Button {
                     viewModel.goHome()
                 } label: {
-                    Text("На главную")
+                    Text(L10n.Nav.home)
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()

@@ -122,11 +122,11 @@ struct UnifiedFinalView: View {
         switch result {
         case .players(let standings, _):
             if let top = standings.first {
-                WinnerCard(name: top.player.name, score: top.score, label: "победитель")
+                WinnerCard(name: top.player.name, score: top.score, label: L10n.Final.winner)
             }
         case .teams(let standings):
             if let top = standings.first {
-                WinnerCard(name: top.name, score: top.score, label: "победившая команда")
+                WinnerCard(name: top.name, score: top.score, label: L10n.Final.winningTeam)
             }
         }
     }
@@ -226,7 +226,7 @@ private struct WinnerCard: View {
                         .foregroundStyle(Color.hatTextSecondary)
                     Text("·")
                         .foregroundStyle(Color.hatTextSecondary)
-                    Text("\(score) \(pointsEnding(score))")
+                    Text(L10n.pointsShort(score))
                         .font(.hatCaption)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
@@ -245,15 +245,7 @@ private struct WinnerCard: View {
         )
     }
 
-    private func pointsEnding(_ count: Int) -> String {
-        let mod10 = count % 10, mod100 = count % 100
-        if mod100 >= 11 && mod100 <= 14 { return "очков" }
-        switch mod10 {
-        case 1: return "очко"
-        case 2, 3, 4: return "очка"
-        default: return "очков"
-        }
-    }
+    // pointsEnding removed — replaced by L10n.pointsShort(n) which is localizable
 }
 
 // MARK: - LeaderboardRow

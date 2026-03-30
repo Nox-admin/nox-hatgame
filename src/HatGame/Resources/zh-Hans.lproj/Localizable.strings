@@ -87,3 +87,4 @@
 "label.score" = "分数";
 "label.round" = "回合";
 "label.turn" = "轮次";
+"settings.restart_required" = "请重启应用以应用新语言";

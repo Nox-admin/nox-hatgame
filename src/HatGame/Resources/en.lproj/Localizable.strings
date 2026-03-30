@@ -87,3 +87,4 @@
 "label.score" = "Score";
 "label.round" = "Round";
 "label.turn" = "Turn";
+"settings.restart_required" = "Restart the app to apply the new language";

@@ -87,3 +87,4 @@
 "label.score" = "Очки";
 "label.round" = "Раунд";
 "label.turn" = "Ход";
+"settings.restart_required" = "Перезапустите приложение для применения языка";

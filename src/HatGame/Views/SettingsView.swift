@@ -50,7 +50,7 @@ struct SettingsView: View {
                 }
 
                 // Язык приложения
-                Section("settings.language".localized) {
+                Section(L10n.Settings.language) {
                     ForEach(AppLanguage.allCases) { lang in
                         Button {
                             languageManager.setLanguage(lang)
@@ -63,7 +63,7 @@ struct SettingsView: View {
                                 Spacer()
                                 if languageManager.currentLanguage == lang {
                                     Image(systemName: "checkmark")
-                                        .foregroundStyle(Color.blue)
+                                        .foregroundStyle(Color.hatGold)
                                         .fontWeight(.semibold)
                                 }
                             }
@@ -71,7 +71,7 @@ struct SettingsView: View {
                     }
 
                     if languageManager.restartRequired {
-                        Text("Перезапустите приложение для применения языка")
+                        Text(L10n.Settings.restartRequired)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }

@@ -94,9 +94,11 @@ enum L10n {
         static var params: String       { "settings.params".localized }
         static var turnTime: String     { "settings.turn_time".localized }
         static var hatSize: String      { "settings.hat_size".localized }
-        static var skipButton: String   { "settings.skip_button".localized }
-        static var skipSubtitle: String { "settings.skip_subtitle".localized }
-        static var difficulty: String   { "settings.difficulty".localized }
+        static var skipButton: String      { "settings.skip_button".localized }
+        static var skipSubtitle: String   { "settings.skip_subtitle".localized }
+        static var difficulty: String     { "settings.difficulty".localized }
+        static var language: String       { "settings.language".localized }
+        static var restartRequired: String{ "settings.restart_required".localized }
     }
 
     // MARK: - Difficulty

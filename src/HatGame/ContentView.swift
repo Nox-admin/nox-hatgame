@@ -32,8 +32,8 @@ enum NavigationState: Equatable {
 
 /// Корневое представление с навигацией между экранами
 struct ContentView: View {
-    @StateObject private var gameViewModel = GameViewModel()
-    @StateObject private var setupViewModel = TeamSetupViewModel()
+    @EnvironmentObject private var gameViewModel: GameViewModel
+    @EnvironmentObject private var setupViewModel: TeamSetupViewModel
 
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     /// BUG-009: отслеживаем фазу приложения чтобы паузить таймер при уходе в фон

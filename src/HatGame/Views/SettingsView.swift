@@ -70,11 +70,7 @@ struct SettingsView: View {
                         }
                     }
 
-                    if languageManager.restartRequired {
-                        Text(L10n.Settings.restartRequired)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
+
                 }
             }
 

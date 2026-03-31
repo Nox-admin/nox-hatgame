@@ -39,39 +39,26 @@ enum AppLanguage: String, CaseIterable, Identifiable {
 // MARK: - LanguageManager
 
 /// Управляет текущим языком приложения в рантайме.
-/// Использует `AppleLanguages` в UserDefaults для переопределения системного языка.
-/// Требует перезапуска сессии (restartRequired = true) для применения к `String(localized:)`.
+/// При смене языка `HatGameApp` пересоздаёт дерево вьюх через `.id(language)` —
+/// все L10n-строки подхватываются мгновенно, перезапуск не нужен.
 final class LanguageManager: ObservableObject {
 
     static let shared = LanguageManager()
 
     @Published private(set) var currentLanguage: AppLanguage
 
-    /// После смены языка нужен перезапуск приложения для применения локализации
-    @Published var restartRequired = false
-
     private init() {
-        // Читаем сохранённый язык
         let saved = UserDefaults.standard.string(forKey: "app_language") ?? "ru"
         self.currentLanguage = AppLanguage(rawValue: saved) ?? .russian
-        // Применяем к системе
-        Self.applyLanguage(self.currentLanguage.rawValue)
     }
 
     func setLanguage(_ language: AppLanguage) {
         guard language != currentLanguage else { return }
         currentLanguage = language
         UserDefaults.standard.set(language.rawValue, forKey: "app_language")
-        Self.applyLanguage(language.rawValue)
-        restartRequired = true
     }
 
     // MARK: - Internal
-
-    private static func applyLanguage(_ code: String) {
-        UserDefaults.standard.set([code], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
-    }
 
     /// Bundle для текущего языка — для ручной локализации строк
     var currentBundle: Bundle {

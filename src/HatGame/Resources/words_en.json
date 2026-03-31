@@ -203,7 +203,7 @@
     { "id": "en_187", "text": "spinning top", "category": "Objects", "difficulty": "easy" },
     { "id": "en_188", "text": "vending machine", "category": "Objects", "difficulty": "medium" },
     { "id": "en_189", "text": "escalator", "category": "Places", "difficulty": "easy" },
-    { "id": "en_190", "text": "hammock", "category": "Objects", "difficulty": "medium" },
+    { "id": "en_190", "text": "lantern", "category": "Objects", "difficulty": "medium" },
     { "id": "en_191", "text": "surgeon", "category": "People", "difficulty": "easy" },
     { "id": "en_192", "text": "shepherd", "category": "People", "difficulty": "medium" },
     { "id": "en_193", "text": "jockey", "category": "People", "difficulty": "medium" },

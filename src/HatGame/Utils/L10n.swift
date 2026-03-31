@@ -98,7 +98,6 @@ enum L10n {
         static var skipSubtitle: String   { "settings.skip_subtitle".localized }
         static var difficulty: String     { "settings.difficulty".localized }
         static var language: String       { "settings.language".localized }
-        static var restartRequired: String{ "settings.restart_required".localized }
     }
 
     // MARK: - Difficulty

@@ -3,6 +3,10 @@ import SwiftData
 
 @main
 struct HatGameApp: App {
+    @StateObject private var languageManager = LanguageManager.shared
+    @StateObject private var gameViewModel = GameViewModel()
+    @StateObject private var setupViewModel = TeamSetupViewModel()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             GameSettingsEntity.self  // BUG-008: GameSettings теперь plain struct, @Model — GameSettingsEntity
@@ -23,7 +27,13 @@ struct HatGameApp: App {
 
     var body: some Scene {
         WindowGroup {
+            // id: языка пересоздаёт всё дерево вьюх при смене языка,
+            // гарантируя перечитывание всех L10n-строк
             ContentView()
+                .id(languageManager.currentLanguage.rawValue)
+                .environmentObject(languageManager)
+                .environmentObject(gameViewModel)
+                .environmentObject(setupViewModel)
         }
         .modelContainer(sharedModelContainer)
     }

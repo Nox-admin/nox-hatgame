@@ -120,3 +120,7 @@ final class TimerService: ObservableObject {
         timer?.invalidate()
     }
 }
+
+// MARK: - PausableTimerService
+
+extension TimerService: PausableTimerService {}

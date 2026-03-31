@@ -14,7 +14,8 @@ struct WordAttribution: Identifiable {
 // MARK: - FreeForAllGameViewModel
 
 @MainActor
-final class FreeForAllGameViewModel: ObservableObject {
+final class FreeForAllGameViewModel: ObservableObject, PausableViewModel {
+    var pauseTimerService: PausableTimerService { timerService }
 
     enum Phase: Equatable {
         case waiting      // Передача телефона, показываем кто объясняет
@@ -74,9 +75,6 @@ final class FreeForAllGameViewModel: ObservableObject {
     init(config: GameConfig) {
         self.config = config
         self.timerService = TimerService(duration: config.turnDuration)
-        self.wordDeck = config.teams.flatMap { $0.players }
-            .isEmpty ? [] : []
-
         // Загружаем слова из конфига
         let deck = DeckService.loadAllWords(level: config.difficulty.wordLevel).shuffled()
         self.wordDeck = deck
@@ -172,35 +170,17 @@ final class FreeForAllGameViewModel: ObservableObject {
         phase = .waiting
     }
 
-    // MARK: - Pause
-
-    func pauseGame() {
-        timerService.pause()
-        isPaused = true
-        isPausedBySystem = false
-    }
-
-    func pauseBySystem() {
-        timerService.pause()
-        isPaused = true
-        isPausedBySystem = true
-    }
-
-    func resumeGame() {
-        timerService.resume()
-        isPaused = false
-        isPausedBySystem = false
-    }
+    // MARK: - Pause (реализация через PausableViewModel)
 
     // MARK: - Round info
 
     var roundLabel: String {
-        "Раунд \(roundNumber)"
+        L10n.FreeForAll.roundLabel(roundNumber)
     }
 
     var explainerOrdinal: String {
         guard let explainer = currentExplainer else { return "" }
-        return "Объясняет: \(explainer.name)"
+        return L10n.FreeForAll.explainerLabel(explainer.name)
     }
 
     // MARK: - TASK-013: Принудительное завершение + рестарт

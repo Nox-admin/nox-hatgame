@@ -160,6 +160,10 @@
 "final.winner_label" = "ПОБЕДИТЕЛЬ";
 "final.results" = "Результаты";
 
+/* GameConfig generated names */
+"gameconfig.pair_name" = "Пара %d";
+"gameconfig.all_players" = "Все игроки";
+
 /* Misc */
 "seconds_abbr" = "%d с";
 "sec_full" = "%d сек";

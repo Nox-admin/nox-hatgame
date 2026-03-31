@@ -127,6 +127,14 @@ enum L10n {
         }
     }
 
+    // MARK: - Pairs / FreeForAll generated names
+    enum GameConfig {
+        static func pairName(_ n: Int) -> String {
+            "gameconfig.pair_name".localized(with: n)
+        }
+        static var allPlayersTeam: String { "gameconfig.all_players".localized }
+    }
+
     // MARK: - Words
     enum Words {
         static var section: String      { "words.section".localized }
@@ -228,6 +236,16 @@ enum L10n {
         static var share: String       { "final.share".localized }
         static var winnerLabel: String { "final.winner_label".localized }
         static var results: String     { "final.results".localized }
+    }
+
+    // MARK: - FreeForAll gameplay labels
+    enum FreeForAll {
+        static func roundLabel(_ n: Int) -> String {
+            "round.label".localized(with: n)
+        }
+        static func explainerLabel(_ name: String) -> String {
+            "gameplay.explains".localized(with: name)
+        }
     }
 
     // MARK: - Misc

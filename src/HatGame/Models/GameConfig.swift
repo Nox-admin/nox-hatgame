@@ -86,7 +86,7 @@ struct GameConfig {
         while shuffledPlayers.count >= 2 {
             let p1 = shuffledPlayers.removeFirst()
             let p2 = shuffledPlayers.removeFirst()
-            teams.append(Team(name: "Пара \(teamIndex)", players: [p1, p2]))
+            teams.append(Team(name: L10n.GameConfig.pairName(teamIndex), players: [p1, p2]))
             teamIndex += 1
         }
         if let odd = shuffledPlayers.first, !teams.isEmpty {
@@ -100,7 +100,7 @@ struct GameConfig {
 
     /// Режим "Все сразу": все игроки в одной группе
     static func freeForAll(players: [Player], difficulty: DifficultyLevel, turnDuration: Int, allowSkip: Bool = false, hatSize: Int = 100) -> GameConfig {
-        let team = Team(name: "Все игроки", players: players)
+        let team = Team(name: L10n.GameConfig.allPlayersTeam, players: players)
         return GameConfig(players: players, mode: .freeForAll, teams: [team],
                           difficulty: difficulty, turnDuration: turnDuration,
                           showScoreDuringGame: true, allowSkip: allowSkip, hatSize: hatSize)

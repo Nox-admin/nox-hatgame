@@ -3,7 +3,8 @@ import SwiftUI
 
 /// ViewModel попарного режима игры
 @MainActor
-final class PairsGameViewModel: ObservableObject {
+final class PairsGameViewModel: ObservableObject, PausableViewModel {
+    var pauseTimerService: PausableTimerService { timerService }
 
     // MARK: - Фаза игры
 
@@ -139,25 +140,7 @@ final class PairsGameViewModel: ObservableObject {
         return (currentRoundIndex / n) + 1
     }
 
-    // MARK: - Пауза
-
-    func pauseGame() {
-        timerService.pause()
-        isPaused = true
-        isPausedBySystem = false
-    }
-
-    func pauseBySystem() {
-        timerService.pause()
-        isPaused = true
-        isPausedBySystem = true
-    }
-
-    func resumeGame() {
-        timerService.resume()
-        isPaused = false
-        isPausedBySystem = false
-    }
+    // MARK: - Пауза (реализация через PausableViewModel)
 
     // MARK: - Коррекция результатов
 

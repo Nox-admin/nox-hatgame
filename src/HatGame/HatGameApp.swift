@@ -5,7 +5,6 @@ import SwiftData
 struct HatGameApp: App {
     @StateObject private var languageManager = LanguageManager.shared
     @StateObject private var gameViewModel = GameViewModel()
-    @StateObject private var setupViewModel = TeamSetupViewModel()
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -33,7 +32,6 @@ struct HatGameApp: App {
                 .id(languageManager.currentLanguage.rawValue)
                 .environmentObject(languageManager)
                 .environmentObject(gameViewModel)
-                .environmentObject(setupViewModel)
         }
         .modelContainer(sharedModelContainer)
     }

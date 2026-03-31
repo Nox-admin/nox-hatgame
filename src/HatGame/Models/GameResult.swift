@@ -7,10 +7,7 @@ enum GameResult {
     case teams(standings: [Team])
 
     var title: String {
-        switch self {
-        case .players: return "Игра завершена!"
-        case .teams:   return "Игра завершена!"
-        }
+        return L10n.Final.gameOver
     }
 
     var winnerName: String? {

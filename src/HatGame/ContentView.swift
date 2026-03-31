@@ -5,12 +5,6 @@ enum NavigationState: Equatable {
     case home
     case playerSetup   // v2: ввод игроков
     case modeSelection // v2: выбор режима + сборка команд
-    case teamSetup     // v1 legacy
-    case wordInput
-    case waiting
-    case gameplay
-    case turnEnd
-    case results
     case settings
     // Попарный режим
     case pairsWaiting
@@ -33,11 +27,8 @@ enum NavigationState: Equatable {
 /// Корневое представление с навигацией между экранами
 struct ContentView: View {
     @EnvironmentObject private var gameViewModel: GameViewModel
-    @EnvironmentObject private var setupViewModel: TeamSetupViewModel
 
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
-    /// BUG-009: отслеживаем фазу приложения чтобы паузить таймер при уходе в фон
-    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         NavigationStack {
@@ -50,30 +41,6 @@ struct ContentView: View {
             }
             .animation(.easeInOut, value: gameViewModel.navigationState)
             .animation(.easeInOut, value: hasSeenOnboarding)
-        }
-        .fullScreenCover(isPresented: $gameViewModel.showPhoneHandoff) {
-            PhoneHandoffView(
-                playerName: gameViewModel.currentWordInputPlayer?.name ?? "",
-                onReady: {
-                    gameViewModel.phoneHandoffDone()
-                }
-            )
-        }
-        // BUG-009: пауза/возобновление при уходе в фон / звонке / возврате
-        .onChange(of: scenePhase) { _, newPhase in
-            guard gameViewModel.navigationState == .gameplay
-               || gameViewModel.navigationState == .teamsGameplay else { return }
-            switch newPhase {
-            case .inactive, .background:
-                gameViewModel.pauseGameBySystem()
-            case .active:
-                // Возобновляем только если игра была на паузе из-за фона (не ручная пауза)
-                if gameViewModel.isPausedBySystem {
-                    gameViewModel.resumeGame()
-                }
-            @unknown default:
-                break
-            }
         }
     }
 
@@ -100,37 +67,6 @@ struct ContentView: View {
                     gameViewModel.startGame(with: config)
                 }
             )
-
-        case .teamSetup:
-            TeamSetupView(
-                viewModel: setupViewModel,
-                onBack: {
-                    gameViewModel.goHome()
-                },
-                onContinue: {
-                    // BUG-012: wordsPerPlayer убран из вызова
-                    gameViewModel.setupWordInput(
-                        players: setupViewModel.players,
-                        turnDuration: setupViewModel.turnDuration,
-                        difficulty: setupViewModel.difficulty
-                    )
-                }
-            )
-
-        case .wordInput:
-            WordInputView(viewModel: gameViewModel)
-
-        case .waiting:
-            WaitingView(viewModel: gameViewModel)
-
-        case .gameplay:
-            GameplayView(viewModel: gameViewModel)
-
-        case .turnEnd:
-            TurnEndView(viewModel: gameViewModel)
-
-        case .results:
-            FinalResultsView(viewModel: gameViewModel)
 
         case .settings:
             SettingsView(viewModel: gameViewModel)

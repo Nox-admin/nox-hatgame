@@ -152,6 +152,56 @@ final class GameEngine: ObservableObject {
         return session.wordDeck.isEmpty || allGuessed
     }
 
+    // MARK: - Коррекция результатов
+
+    /// Применяет пользовательские правки к результатам раунда.
+    ///
+    /// Единый источник правды для синхронизации `wordDeck`/`guessedWords` и пересчёта score.
+    /// Вызывается из `GameViewModel.confirmTurnResults()` и `TeamsGameViewModel.confirmRound()`.
+    ///
+    /// - Parameters:
+    ///   - turnResults: итоговый массив `TurnWordResult` после правок пользователем
+    ///   - originalGuessedIds: идентификаторы слов, угаданных **до** правок (снимок начала хода)
+    ///   - teamIdx: индекс команды, счёт которой нужно скорректировать
+    func applyTurnCorrections(
+        turnResults: [TurnWordResult],
+        originalGuessedIds: Set<UUID>,
+        teamIdx: Int
+    ) {
+        guard !session.teams.isEmpty, session.teams.indices.contains(teamIdx) else { return }
+
+        var scoreDelta = 0
+
+        for result in turnResults {
+            let wasGuessed = originalGuessedIds.contains(result.id)
+
+            if result.guessed && !wasGuessed {
+                // Пропущенное → угаданное
+                scoreDelta += 1
+                if let deckIdx = session.wordDeck.firstIndex(where: { $0.id == result.id }) {
+                    var word = session.wordDeck.remove(at: deckIdx)
+                    word.isGuessed = true
+                    session.guessedWords.append(word)
+                }
+            } else if !result.guessed && wasGuessed {
+                // Угаданное → пропущенное
+                scoreDelta -= 1
+                if let guessedIdx = session.guessedWords.firstIndex(where: { $0.id == result.id }) {
+                    var word = session.guessedWords.remove(at: guessedIdx)
+                    word.isGuessed = false
+                    let insertIdx = session.wordDeck.isEmpty
+                        ? 0
+                        : Int.random(in: 0...session.wordDeck.count)
+                    session.wordDeck.insert(word, at: insertIdx)
+                }
+            }
+        }
+
+        if scoreDelta != 0 {
+            session.teams[teamIdx].score = max(0, session.teams[teamIdx].score + scoreDelta)
+        }
+    }
+
     // MARK: - Результаты
 
     /// Команды, отсортированные по очкам (победители первые)

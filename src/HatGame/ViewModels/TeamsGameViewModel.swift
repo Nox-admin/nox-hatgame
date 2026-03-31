@@ -4,7 +4,8 @@ import Combine
 
 /// ViewModel командного режима игры
 @MainActor
-final class TeamsGameViewModel: ObservableObject {
+final class TeamsGameViewModel: ObservableObject, PausableViewModel {
+    var pauseTimerService: PausableTimerService { engine.timerService }
 
     // MARK: - Фаза игры
 
@@ -100,25 +101,7 @@ final class TeamsGameViewModel: ObservableObject {
         }
     }
 
-    // MARK: - Пауза
-
-    func pauseGame() {
-        engine.timerService.pause()
-        isPaused = true
-        isPausedBySystem = false
-    }
-
-    func pauseBySystem() {
-        engine.timerService.pause()
-        isPaused = true
-        isPausedBySystem = true
-    }
-
-    func resumeGame() {
-        engine.timerService.resume()
-        isPaused = false
-        isPausedBySystem = false
-    }
+    // MARK: - Пауза (реализация через PausableViewModel)
 
     // MARK: - Результаты хода
 
@@ -138,16 +121,9 @@ final class TeamsGameViewModel: ObservableObject {
 
     func toggleResult(at index: Int) {
         guard turnResults.indices.contains(index) else { return }
+        // Только переключаем UI-состояние. Счёт пересчитывается единожды в applyCorrections()
+        // при подтверждении раунда, чтобы избежать двойного начисления.
         turnResults[index].guessed.toggle()
-        // Корректируем счёт команды
-        let teamCount = engine.session.teams.count
-        guard teamCount > 0 else { return }
-        let teamIdx = engine.session.currentTeamIndex % teamCount
-        if turnResults[index].guessed {
-            engine.session.teams[teamIdx].score += 1
-        } else {
-            engine.session.teams[teamIdx].score = max(0, engine.session.teams[teamIdx].score - 1)
-        }
     }
 
     func confirmRound() {
@@ -188,28 +164,12 @@ final class TeamsGameViewModel: ObservableObject {
             originalGuessedIds = []
         }
 
-        for result in turnResults {
-            let wasGuessed = originalGuessedIds.contains(result.id)
-
-            if result.guessed && !wasGuessed {
-                // Исправлено: пропущенное → угаданное
-                if let deckIdx = engine.session.wordDeck.firstIndex(where: { $0.id == result.id }) {
-                    var word = engine.session.wordDeck.remove(at: deckIdx)
-                    word.isGuessed = true
-                    engine.session.guessedWords.append(word)
-                }
-            } else if !result.guessed && wasGuessed {
-                // Исправлено: угаданное → пропущенное
-                if let guessedIdx = engine.session.guessedWords.firstIndex(where: { $0.id == result.id }) {
-                    var word = engine.session.guessedWords.remove(at: guessedIdx)
-                    word.isGuessed = false
-                    let insertIdx = engine.session.wordDeck.isEmpty
-                        ? 0
-                        : Int.random(in: 0...engine.session.wordDeck.count)
-                    engine.session.wordDeck.insert(word, at: insertIdx)
-                }
-            }
-        }
+        // Вся логика синхронизации deck/guessedWords и пересчёта score — в GameEngine.
+        engine.applyTurnCorrections(
+            turnResults: turnResults,
+            originalGuessedIds: originalGuessedIds,
+            teamIdx: teamIdx
+        )
     }
 
     // MARK: - TASK-013: Принудительное завершение + рестарт

@@ -160,6 +160,10 @@
 "final.winner_label" = "WINNER";
 "final.results" = "Results";
 
+/* GameConfig generated names */
+"gameconfig.pair_name" = "Pair %d";
+"gameconfig.all_players" = "All Players";
+
 /* Misc */
 "seconds_abbr" = "%d s";
 "sec_full" = "%d sec";

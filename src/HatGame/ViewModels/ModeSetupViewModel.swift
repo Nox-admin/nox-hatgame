@@ -50,14 +50,14 @@ final class ModeSetupViewModel: ObservableObject {
     func resetTeams() {
         // По умолчанию: 2 пустые команды
         teams = [
-            TeamDraft(name: "Команда 1"),
-            TeamDraft(name: "Команда 2")
+            TeamDraft(name: L10n.Teams.defaultName(1)),
+            TeamDraft(name: L10n.Teams.defaultName(2))
         ]
     }
 
     func addTeam() {
         let number = teams.count + 1
-        teams.append(TeamDraft(name: "Команда \(number)"))
+        teams.append(TeamDraft(name: L10n.Teams.defaultName(number)))
     }
 
     func removeTeam(at index: Int) {

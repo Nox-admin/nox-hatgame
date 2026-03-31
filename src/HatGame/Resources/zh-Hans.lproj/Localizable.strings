@@ -160,6 +160,10 @@
 "final.winner_label" = "获胜者";
 "final.results" = "结果";
 
+/* GameConfig generated names */
+"gameconfig.pair_name" = "对子 %d";
+"gameconfig.all_players" = "所有玩家";
+
 /* Misc */
 "seconds_abbr" = "%d 秒";
 "sec_full" = "%d 秒";

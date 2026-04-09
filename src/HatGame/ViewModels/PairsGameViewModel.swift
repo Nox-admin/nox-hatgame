@@ -75,6 +75,7 @@ final class PairsGameViewModel: ObservableObject, PausableViewModel {
             phase = .gameOver
             return
         }
+        wordDeck.shuffle()
         currentTurnGuessed = []
         currentTurnSkipped = []
 
@@ -164,16 +165,27 @@ final class PairsGameViewModel: ObservableObject, PausableViewModel {
         }
     }
 
+    /// Сжечь слово — удалить из колоды навсегда (спалённое слово)
+    func burnWord(wordId: UUID) {
+        // Удаляем из skipped (не вернётся в колоду при confirmRound)
+        currentTurnSkipped.removeAll { $0.id == wordId }
+        // Удаляем из guessed и снимаем очки
+        if let idx = currentTurnGuessed.firstIndex(where: { $0.id == wordId }) {
+            currentTurnGuessed.remove(at: idx)
+            if let round = currentRound {
+                scores[round.explainer.id, default: 0] = max(0, (scores[round.explainer.id] ?? 0) - 1)
+                scores[round.guesser.id, default: 0] = max(0, (scores[round.guesser.id] ?? 0) - 1)
+            }
+        }
+        // Удаляем из основной колоды на случай если слово было пропущено и вернулось
+        wordDeck.removeAll { $0.id == wordId }
+    }
+
     // MARK: - TASK-013: Принудительное завершение + рестарт
 
     func endGameEarly() {
-        // BUG-021: с WaitingView (ещё не играли) → на главный экран; с Gameplay/Pause → финал с очками
-        if phase == .waiting {
-            phase = .goHome
-        } else {
-            timerService.stop()
-            phase = .gameOver
-        }
+        timerService.stop()
+        phase = .gameOver
     }
 
     func restartGame() {

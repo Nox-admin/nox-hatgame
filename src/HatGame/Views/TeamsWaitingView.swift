@@ -18,10 +18,6 @@ struct TeamsWaitingView: View {
                     .tracking(3)
                     .padding(.top, 24)
 
-                // Таблица команд
-                scoresCard
-                    .padding(.horizontal, 20)
-
                 Spacer()
 
                 // Кто объясняет

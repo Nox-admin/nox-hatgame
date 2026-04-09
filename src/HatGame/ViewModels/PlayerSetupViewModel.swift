@@ -12,12 +12,16 @@ final class PlayerSetupViewModel: ObservableObject {
 
     @Published var validationError: String? = nil
 
-    init() {
-        // Дефолтные имена через L10n — реагируют на текущий язык приложения
-        self.players = [
-            Player(name: L10n.Players.defaultName(1)),
-            Player(name: L10n.Players.defaultName(2))
-        ]
+    init(players: [Player]? = nil) {
+        if let players, !players.isEmpty {
+            self.players = players
+        } else {
+            // Дефолтные имена через L10n — реагируют на текущий язык приложения
+            self.players = [
+                Player(name: L10n.Players.defaultName(1)),
+                Player(name: L10n.Players.defaultName(2))
+            ]
+        }
     }
 
     // MARK: - Валидация

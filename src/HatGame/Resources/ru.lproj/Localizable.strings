@@ -121,7 +121,7 @@
 "gameplay.skip" = "Пропустить";
 "gameplay.pause" = "Пауза";
 "gameplay.resume" = "Продолжить";
-"gameplay.end_early" = "Завершить игру";
+"gameplay.end_early" = "Завершить ход досрочно";
 "gameplay.words_left" = "Осталось %d слов";
 "gameplay.explains" = "%@ объясняет";
 

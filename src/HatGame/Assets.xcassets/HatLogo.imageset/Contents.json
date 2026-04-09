@@ -4,6 +4,16 @@
       "filename" : "HatLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
+    },
+    {
+      "filename" : "HatLogo@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "HatLogo@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

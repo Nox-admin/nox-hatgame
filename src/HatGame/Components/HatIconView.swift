@@ -5,7 +5,7 @@ struct HatIconView: View {
     var size: CGFloat = 80
 
     var body: some View {
-        Image("HatLogo")
+        Image(.hatLogo)
             .resizable()
             .scaledToFit()
             .frame(width: size, height: size)

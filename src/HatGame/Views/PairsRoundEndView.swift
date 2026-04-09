@@ -44,9 +44,11 @@ struct PairsRoundEndView: View {
 
                 // Список слов
                 ScrollView {
-                    PostRoundWordListView(entries: $entries) { id in
+                    PostRoundWordListView(entries: $entries, onToggle: { id in
                         viewModel.toggleTurnResult(wordId: id)
-                    }
+                    }, onBurn: { id in
+                        viewModel.burnWord(wordId: id)
+                    })
                     .padding(.horizontal, 20)
                 }
 

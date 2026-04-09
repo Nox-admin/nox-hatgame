@@ -52,6 +52,7 @@ struct ContentView: View {
 
         case .playerSetup:
             PlayerSetupView(
+                initialPlayers: gameViewModel.pendingPlayers,
                 onBack: { gameViewModel.navigateTo(.home) },
                 onContinue: { players in
                     gameViewModel.pendingPlayers = players

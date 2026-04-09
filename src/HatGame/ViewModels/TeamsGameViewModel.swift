@@ -182,13 +182,8 @@ final class TeamsGameViewModel: ObservableObject, PausableViewModel {
     }
 
     func endGameEarly() {
-        // BUG-021: с WaitingView (ещё не играли) → на главный экран; с Gameplay/Pause → финал с очками
-        if navigationPhase == .waiting {
-            navigationPhase = .goHome
-        } else {
-            engine.timerService.stop()
-            navigationPhase = .gameOver
-        }
+        engine.timerService.stop()
+        navigationPhase = .gameOver
     }
 
     func restartGame() {

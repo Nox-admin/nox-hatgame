@@ -3,10 +3,16 @@ import SwiftUI
 /// Экран ввода игроков — переиспользуется во всех режимах v2
 /// Передаёт финальный список через onContinue callback
 struct PlayerSetupView: View {
-    @StateObject private var viewModel = PlayerSetupViewModel()
+    @StateObject private var viewModel: PlayerSetupViewModel
 
     var onBack: () -> Void = {}
     var onContinue: ([Player]) -> Void = { _ in }
+
+    init(initialPlayers: [Player] = [], onBack: @escaping () -> Void = {}, onContinue: @escaping ([Player]) -> Void = { _ in }) {
+        _viewModel = StateObject(wrappedValue: PlayerSetupViewModel(players: initialPlayers.isEmpty ? nil : initialPlayers))
+        self.onBack = onBack
+        self.onContinue = onContinue
+    }
 
     @State private var editingIndex: Int? = nil
     @State private var emojiPickerIndex: Int? = nil  // показывать пикер для этого индекса

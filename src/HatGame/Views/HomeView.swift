@@ -19,33 +19,36 @@ struct HomeView: View {
                 .padding(.top, 8)
                 .padding(.trailing, 16)
 
-            VStack(spacing: 32) {
+            VStack(spacing: 0) {
                 Spacer()
 
-                // Шляпа с анимацией покачивания
-                HatIconView(size: 80)
+                // Логотип с анимацией покачивания
+                HatIconView(size: 140)
+                    .shadow(color: Color.hatGold.opacity(0.3), radius: 24, y: 12)
                     .offset(y: hatOffset)
                     .onAppear {
                         withAnimation(
-                            .easeInOut(duration: 2)
+                            .easeInOut(duration: 2.5)
                             .repeatForever(autoreverses: true)
                         ) {
-                            hatOffset = -12
+                            hatOffset = -14
                         }
                     }
+                    .padding(.bottom, 28)
 
                 // Заголовок
-                VStack(spacing: 8) {
+                VStack(spacing: 10) {
                     Text(L10n.Home.title)
-                        .font(.hatH1)
+                        .font(.system(size: 36, weight: .bold, design: .rounded))
                         .foregroundStyle(Color.hatTextPrimary)
-                        .tracking(6)
+                        .tracking(8)
 
                     Text(L10n.Home.tagline)
-                        .font(.hatCaption)
+                        .font(.hatBody)
                         .foregroundStyle(Color.hatTextSecondary)
                 }
 
+                Spacer()
                 Spacer()
 
                 // Кнопки
@@ -54,7 +57,6 @@ struct HomeView: View {
                         viewModel.navigateTo(.playerSetup)
                     }
 
-                    // BUG-020: кнопка "Настройки" убрана с главного экрана по требованию Jack
                     HatSecondaryButton(title: L10n.Home.rules) {
                         showRules = true
                     }
@@ -62,6 +64,7 @@ struct HomeView: View {
                 .padding(.horizontal, 32)
 
                 Spacer()
+                    .frame(height: 48)
             }
         }
         .navigationBarHidden(true)

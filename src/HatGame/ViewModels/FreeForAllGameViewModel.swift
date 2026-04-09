@@ -92,6 +92,7 @@ final class FreeForAllGameViewModel: ObservableObject, PausableViewModel {
             phase = .gameOver
             return
         }
+        wordDeck.shuffle()
         currentTurnGuessed = []
         currentTurnSkipped = []
 
@@ -186,13 +187,8 @@ final class FreeForAllGameViewModel: ObservableObject, PausableViewModel {
     // MARK: - TASK-013: Принудительное завершение + рестарт
 
     func endGameEarly() {
-        // BUG-021: с WaitingView (ещё не играли) → на главный экран; с Gameplay/Pause → финал с очками
-        if phase == .waiting {
-            phase = .goHome
-        } else {
-            timerService.stop()
-            phase = .gameOver
-        }
+        timerService.stop()
+        phase = .gameOver
     }
 
     func restartGame() {

@@ -56,10 +56,6 @@ struct PairsWaitingView: View {
 
                 Spacer()
 
-                // Мини-таблица лидеров (топ-3)
-                leaderboardCard
-                    .padding(.horizontal, 20)
-
                 Spacer()
 
                 // Кнопка старта

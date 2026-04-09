@@ -49,6 +49,7 @@ final class GameEngine: ObservableObject {
         session.state = .playing
         session.roundScore = 0
         session.skippedWordsThisTurn = []
+        session.wordDeck.shuffle()
 
         // Переиспользуем существующий timerService — НЕ пересоздаём,
         // иначе @ObservedObject в GameplayView потеряет подписку (BUG-001 fix)

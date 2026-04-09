@@ -34,10 +34,21 @@ targets:
         CFBundleName: HatGame
         CFBundleShortVersionString: "1.0"
         CFBundleVersion: "1"
+        CFBundleDevelopmentRegion: ru
+        CFBundleLocalizations:
+          - ru
+          - en
+          - zh-Hans
+        ITSAppUsesNonExemptEncryption: false
         UILaunchScreen:
-          UIColorName: ""
+          UIColorName: LaunchBackground
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
     settings:

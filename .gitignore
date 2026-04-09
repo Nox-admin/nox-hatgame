@@ -1,0 +1,22 @@
+# Generated Xcode project (regenerate via: cd src && xcodegen generate)
+*.xcodeproj/
+
+# Build artifacts
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.hmap
+*.moved-aside
+
+# macOS
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea
+*.sw?
+
+# Project-specific
+.agents

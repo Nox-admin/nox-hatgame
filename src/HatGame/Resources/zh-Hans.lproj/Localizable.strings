@@ -1,0 +1,176 @@
+/* App */
+"app.name" = "帽子游戏";
+
+/* Home */
+"home.title" = "帽子游戏";
+"home.tagline" = "多人文字游戏";
+"home.new_game" = "新游戏";
+"home.rules" = "规则";
+
+/* Rules */
+"rules.title" = "游戏规则";
+"rules.1" = "分成每队2人以上的队伍。";
+"rules.2" = "选择难度，将词语放入帽中。";
+"rules.3" = "一人解释词语，其他人猜。";
+"rules.4" = "每猜对一个词得一分。";
+"rules.5" = "时间有限——尽可能多猜！";
+"rules.6" = "得分最多的队伍获胜。";
+
+/* Navigation */
+"nav.back" = "返回";
+"nav.players" = "玩家";
+"nav.done" = "完成";
+"nav.skip" = "跳过";
+"nav.home" = "主页";
+"nav.menu" = "菜单";
+"nav.next" = "下一步 →";
+"nav.continue" = "继续";
+
+/* Onboarding */
+"onboarding.slide1.title" = "派对游戏";
+"onboarding.slide1.subtitle" = "所有人共用一部手机";
+"onboarding.slide2.title" = "解释词语";
+"onboarding.slide2.subtitle" = "不说出来，让队友猜！";
+"onboarding.slide3.title" = "召集朋友";
+"onboarding.slide3.subtitle" = "想好词语——出发吧！";
+"onboarding.start" = "开始游戏";
+
+/* Players */
+"players.add" = "添加玩家";
+"players.name_placeholder" = "玩家姓名";
+"players.duplicate_names" = "玩家姓名必须唯一";
+"players.empty_names" = "所有玩家都需要姓名";
+"players.avatar_picker_title" = "选择头像";
+"players.default_name" = "玩家 %d";
+"players.cannot_delete" = "最少需要 %d 名玩家";
+"players.min_required" = "至少需要 %d 名玩家";
+
+/* Mode */
+"mode.title" = "游戏模式";
+"mode.section" = "模式";
+"mode.start" = "开始游戏";
+"mode.teams.title" = "团队模式";
+"mode.teams.description" = "分成队伍，队伍之间相互竞争。";
+"mode.pairs.title" = "配对模式";
+"mode.pairs.description" = "玩家两两配对解释词语，每人都有机会解释。";
+"mode.ffa.title" = "全员参战";
+"mode.ffa.description" = "一人解释——所有人猜。猜得最多者获胜。";
+"mode.min_players" = "至少需要 %d 名玩家";
+
+/* Settings */
+"settings.section" = "设置";
+"settings.title" = "设置";
+"settings.game_settings" = "游戏设置";
+"settings.params" = "参数";
+"settings.turn_time" = "回合时间";
+"settings.hat_size" = "帽中词数";
+"settings.skip_button" = "跳过按钮";
+"settings.skip_subtitle" = "解释者可以跳过词语";
+"settings.difficulty" = "难度";
+"settings.language" = "语言";
+"settings.restart_required" = "请重启应用以应用新语言";
+
+/* Difficulty */
+"difficulty.easy" = "简单";
+"difficulty.medium" = "中等";
+"difficulty.hard" = "困难";
+"difficulty.all" = "全部难度";
+"difficulty.choose" = "选择难度";
+"difficulty.easy.description" = "简单词语：物品、动物、众所周知的事物";
+"difficulty.hard.description" = "抽象概念、生僻词、复杂想法";
+
+/* Teams */
+"teams.section" = "队伍";
+"teams.add" = "添加队伍";
+"teams.players_section" = "玩家";
+"teams.unassigned_hint" = "将玩家拖入队伍";
+"teams.assign_all" = "将所有玩家分配到队伍";
+"teams.min_two" = "至少需要2支队伍";
+"teams.default_name" = "队伍 %d";
+"teams.empty_warning" = "队伍\"%@\"没有玩家";
+
+/* Words */
+"words.section" = "词语";
+"words.already_added" = "已添加";
+
+/* Handoff */
+"handoff.title" = "传递手机";
+"handoff.pass_to" = "传给";
+"handoff.close_eyes" = "闭上眼睛";
+"handoff.private_screen" = "不要偷看";
+"handoff.ready_suffix" = "，你准备好了！";
+"handoff.enter_words_suffix" = "，请输入词语";
+
+/* Waiting */
+"waiting.next_turn" = "下一回合";
+"waiting.go" = "出发！";
+"waiting.explains_words" = "负责解释词语";
+"waiting.explains_all" = "向所有人解释";
+"waiting.explains_for" = "为队伍解释";
+"waiting.explains" = "解释";
+"waiting.guesses" = "猜词";
+"waiting.score" = "分数";
+"waiting.end_game" = "结束游戏";
+"waiting.all_pairs_done" = "所有配对已完成";
+"waiting.words_in_hat" = "帽中剩余词数：%d";
+
+/* Gameplay */
+"gameplay.words_gone" = "词语已用完";
+"gameplay.words_gone2" = "帽子已空";
+"gameplay.guessed" = "已猜出 ✓";
+"gameplay.skip" = "跳过";
+"gameplay.pause" = "暂停";
+"gameplay.resume" = "继续";
+"gameplay.end_early" = "结束游戏";
+"gameplay.words_left" = "剩余 %d 个词";
+"gameplay.explains" = "%@ 正在解释";
+
+/* Round */
+"round.ended" = "本轮结束！";
+"round.ended2" = "时间到";
+"round.circle_ended" = "循环完成";
+"round.label" = "第 %d 轮";
+"round.of" = "第 %d 轮 / 共 %d 轮";
+"round.score" = "%d 分";
+"round.guessed" = "已猜出：%d";
+
+/* Turn */
+"turn.ended" = "回合结束！";
+"turn.ended2" = "时间到";
+"turn.who_guessed" = "谁猜出来了？";
+"turn.who_guessed2" = "点击猜对的玩家";
+"turn.tap_to_correct" = "点击修正";
+"turn.tap_who_guessed" = "点击猜对者";
+"turn.words_not_guessed" = "未猜出";
+"turn.next_team" = "下一支队伍";
+"turn.ended_team" = "%@ — 回合结束";
+"turn.attributed" = "已确认 %d / %d";
+
+/* Final */
+"final.game_over" = "游戏结束！";
+"final.game_over2" = "游戏结束";
+"final.leaderboard" = "最终排名";
+"final.podium" = "领奖台";
+"final.winner" = "获胜者";
+"final.winning_team" = "获胜队伍";
+"final.play_again" = "再玩一次";
+"final.play_again2" = "再来一轮";
+"final.new_game" = "新游戏";
+"final.share" = "分享";
+"final.winner_label" = "获胜者";
+"final.results" = "结果";
+
+/* GameConfig generated names */
+"gameconfig.pair_name" = "对子 %d";
+"gameconfig.all_players" = "所有玩家";
+
+/* Misc */
+"seconds_abbr" = "%d 秒";
+"sec_full" = "%d 秒";
+"score_points" = "%d 个词";
+"score_total" = "%@：%d 分";
+"guessed_words_suffix" = "个词已猜出";
+"score.points" = "%d 分";
+"score.points_total" = "共 %d 分";
+"score_points_short" = "%d 分";
+"score_points_total" = "共 %d 分";

@@ -1,8 +1,8 @@
 /* App */
-"app.name" = "Hat Game";
+"app.name" = "Shlyapa 2";
 
 /* Home */
-"home.title" = "HAT GAME";
+"home.title" = "SHLYAPA 2";
 "home.tagline" = "Word game for a group";
 "home.new_game" = "New Game";
 "home.rules" = "Rules";

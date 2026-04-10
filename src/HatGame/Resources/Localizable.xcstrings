@@ -40,19 +40,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hat Game"
+            "value" : "Shlyapa 2"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Шляпа"
+            "value" : "Shlyapa 2"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "帽子游戏"
+            "value" : "Shlyapa 2"
           }
         }
       }
@@ -1034,19 +1034,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HAT GAME"
+            "value" : "SHLYAPA 2"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ШЛЯПА"
+            "value" : "SHLYAPA 2"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "帽子游戏"
+            "value" : "SHLYAPA 2"
           }
         }
       }

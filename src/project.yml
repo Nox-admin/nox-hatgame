@@ -30,11 +30,11 @@ targets:
     info:
       path: HatGame/Info.plist
       properties:
-        CFBundleDisplayName: Шляпа
+        CFBundleDisplayName: Shlyapa 2
         CFBundleName: HatGame
         CFBundleShortVersionString: "1.0"
         CFBundleVersion: "1"
-        CFBundleDevelopmentRegion: ru
+        CFBundleDevelopmentRegion: en
         CFBundleLocalizations:
           - ru
           - en

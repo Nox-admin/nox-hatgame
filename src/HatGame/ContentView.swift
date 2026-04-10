@@ -77,8 +77,9 @@ struct ContentView: View {
                 PairsWaitingView(viewModel: vm, onHome: { gameViewModel.goHome() })
                     .onChange(of: vm.phase) { _, phase in
                         switch phase {
-                        case .playing: gameViewModel.navigateTo(.pairsGameplay)
-                        case .goHome:  gameViewModel.goHome()
+                        case .playing:  gameViewModel.navigateTo(.pairsGameplay)
+                        case .gameOver: gameViewModel.navigateTo(.pairsFinal)
+                        case .goHome:   gameViewModel.goHome()
                         default: break
                         }
                     }
@@ -141,8 +142,9 @@ struct ContentView: View {
                 TeamsWaitingView(viewModel: vm, onHome: { gameViewModel.goHome() })
                     .onChange(of: vm.navigationPhase) { _, phase in
                         switch phase {
-                        case .playing: gameViewModel.navigateTo(.teamsGameplay)
-                        case .goHome:  gameViewModel.goHome()
+                        case .playing:  gameViewModel.navigateTo(.teamsGameplay)
+                        case .gameOver: gameViewModel.navigateTo(.teamsFinal)
+                        case .goHome:   gameViewModel.goHome()
                         default: break
                         }
                     }
@@ -197,8 +199,9 @@ struct ContentView: View {
                 FreeForAllWaitingView(viewModel: vm, onHome: { gameViewModel.goHome() })
                     .onChange(of: vm.phase) { _, phase in
                         switch phase {
-                        case .playing: gameViewModel.navigateTo(.freeForAllGameplay)
-                        case .goHome:  gameViewModel.goHome()
+                        case .playing:  gameViewModel.navigateTo(.freeForAllGameplay)
+                        case .gameOver: gameViewModel.navigateTo(.freeForAllFinal)
+                        case .goHome:   gameViewModel.goHome()
                         default: break
                         }
                     }

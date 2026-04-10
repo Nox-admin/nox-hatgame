@@ -192,7 +192,6 @@ struct UnifiedFinalView: View {
             if let onPlayAgain {
                 HatPrimaryButton(title: L10n.Final.playAgain, action: onPlayAgain)
             }
-            ShareResultButton(result: result)
             Button(action: onNewGame) {
                 Text(L10n.Final.newGame)
                     .font(.hatBody)
